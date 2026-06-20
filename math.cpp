@@ -11,7 +11,7 @@ int main(){
     }
     return 0;
 }
-/*
+
 //using formula for the AP
 
 #include<bits/stdc++.h>
@@ -103,4 +103,3 @@ int main(){
     }
     return 0;
 }
-*/
