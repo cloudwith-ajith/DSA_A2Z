@@ -102,3 +102,60 @@ int main(){
     }
     return 0;
 }
+
+//vector
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    //decalartion
+    vector<int> a;
+    vector<pair<int,int>> b;
+    vector<int>c(5,100);
+    vector<int>d(5);
+    //pushing the element to the vector
+    a.push_back(3);
+    a.push_back(10);
+    a.emplace_back(2);
+    for(auto it : a){
+        cout<<it<<endl;
+    }
+    b.push_back({1,2});
+    b.emplace_back(3,4);
+    //iteration in the vector
+    for(auto it : b){
+        cout<<it.first<<" "<<it.second;
+        cout<<endl;
+    }
+    for(auto it : c){
+        cout<<it<<endl;
+    }
+    for(auto it : d){
+        cout<<it<<endl;
+    }
+    auto x = a[1];
+    auto y = a.begin();
+    auto z = a.end();
+    z--;
+    //here the .begin() and .end() function used to collect the memory address of the particular value,so we need to use the itertor with * function
+    cout<<x<<" "<<*(y)<<" "<<*(z)<<endl ;
+    //delection --> erase()
+    a.erase(a.begin());
+    for(auto it : a){
+        cout<<it<<endl;
+    }
+    //insertion
+    a.insert(a.begin(),3);
+    //we can also insert in particular position a.begin()+1,a.insert(position,number of count,value) --> a.insert(begin(a),2,4)-->{4,4,3,10,2}
+    a.insert(begin(a),2,4);
+    for(auto it : a){
+        cout<<it<<endl;
+    }
+    int r =size(a);
+    cout<<r;
+    a.pop_back();//delect the last element
+    // a.swap(b);//swap the vector value
+    a.clear();//clear the element present in the vector
+    cout<<a.empty();//return the true if the element present in the vector else false
+    return 0;
+}
