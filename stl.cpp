@@ -74,3 +74,31 @@ int main(){
     }
     return 0;
 }
+
+//bool comp() --> creating the own way to sort
+
+#include<bits/stdc++.h>
+using namespace std;
+
+bool comp(pair<int,int> a,pair<int,int> b){
+    if (a.second < b.second){
+        return true;
+    }
+    if (a.second > b.second){
+        return false;
+    }
+    if (a.first>b.first){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+int main(){
+    pair<int,int> arr[] = {{1,2},{3,1},{4,1}};
+    sort(begin(arr), end(arr), comp);
+    for(auto it : arr){
+        cout<<it.first<<" "<<it.second<<endl;
+    }
+    return 0;
+}
