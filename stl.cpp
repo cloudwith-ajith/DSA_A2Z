@@ -19,3 +19,12 @@ int main(){
     cout<< maxi;
     return 0;
 }
+//min_element(a,a+n)
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    auto s ={1,2,3,4,5,6};
+    int maxi = *min_element(s.begin(),s.end());
+    cout<< maxi;
+    return 0;
+}
