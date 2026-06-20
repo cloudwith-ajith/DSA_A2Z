@@ -49,3 +49,28 @@ int main(){
     cout << n;
     return 0;
 }
+
+//sorting sort(a,a+n),sort(a.begin,a.end()),sort(a.begin,a.end(),greater<int>())
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    vector <int> v = {6,4,1,8,2,10};
+    sort(v.begin(),v.end(),greater<int>());
+    for(auto it : v){
+        cout<<it<<" ";
+    }
+    return 0;
+}
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    vector <int> v = {6,4,1,8,2,10};
+    sort(v.begin(),v.end();
+    for(auto it : v){
+        cout<<it<<" ";
+    }
+    return 0;
+}
