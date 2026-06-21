@@ -33,3 +33,28 @@ int main(){
     print();
     return 0;
 }
+
+//Print Name N times using Recursion
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int cmt = 0 ;
+void print(int n,string name){
+    if(cmt==n){
+        return;
+    }else{
+        cout<<name<<" ";
+        cmt++;
+        print(n,name);
+    }
+}
+
+int main(){
+    string  name;
+    cin>>name;
+    int n;
+    cin>>n;
+    print(n,name);
+    return 0;
+}
