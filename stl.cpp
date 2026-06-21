@@ -159,3 +159,29 @@ int main(){
     cout<<a.empty();//return the true if the element present in the vector else false
     return 0;
 }
+
+//list<>
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    list<int>l1;
+    l1.push_back(1);
+    l1.emplace_back(2);
+    l1.push_front(0);
+    l1.emplace_front(11);
+    for(auto it : l1){
+        cout<<it<<endl;
+    }
+    l1.pop_back();
+     for(auto it : l1){
+        cout<<it<<endl;
+    }
+    int c = l1.front();
+    int c1 = l1.back();
+    cout<<c<<" "<<c1;
+    
+    return 0;
+}
