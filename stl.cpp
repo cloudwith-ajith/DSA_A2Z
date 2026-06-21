@@ -272,3 +272,33 @@ int main(){
     cout<<pq.top();
     return 0;
 }
+
+//set
+//multiset
+//unordered set
+
+#include<bits/stdc++.h>
+using namespace std;
+//set --> store the sorted and unique elements
+int main(){
+    set <int> s;
+    s.insert(1);
+    s.emplace(2);
+    s.emplace(10);
+    for(auto it : s){
+        cout<<it;
+    }
+    
+    s.erase(10);
+    //finding the element and delect the element with address
+    // auto it = s.find(10);
+    // s.erase(it);
+    for(auto it : s){
+        cout<<it;
+    }
+
+    //to find wheather the element present in the set we can use the count()
+    cout<<s.count(2);  
+    
+    return 0;
+}
