@@ -254,3 +254,21 @@ int main(){
     }
     return 0;
 }
+//pq priority_queue
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    //maximum heap
+    priority_queue<int> pq;
+    pq.push(10);
+    pq.emplace(1);
+    cout<<pq.top();
+    //minimum heap 
+    priority_queue<int,vector<int>,greater<int>> pq;
+    pq.push(10);
+    pq.emplace(1);
+    cout<<pq.top();
+    return 0;
+}
