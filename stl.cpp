@@ -185,3 +185,27 @@ int main(){
     
     return 0;
 }
+
+//deque
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    deque<int> dq;
+    dq.push_back(10);
+    dq.emplace_back(20);
+    dq.push_front(2);
+    dq.emplace_front(1);
+    for(auto it : dq){
+        cout<< it <<endl;
+    }
+    int a = dq.front();
+    int b = dq.back();
+    cout<<"the front is :"<<a<<endl<<"the last element in the dq is:"<<b<<endl;
+    dq.pop_back();
+    dq.pop_front();
+    int s  = dq.size();
+    cout<<s;
+    return 0;
+    
+}
