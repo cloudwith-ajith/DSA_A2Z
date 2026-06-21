@@ -209,3 +209,28 @@ int main(){
     return 0;
     
 }
+
+//stack
+
+#include<bits/stdc++.h>
+using namespace std;
+// stack --> push,pop,top
+int main(){
+    stack <int> sk;
+    sk.push(20);
+    sk.push(10);
+    sk.push(5);
+    cout<<sk.top()<<endl;;
+    sk.pop();
+    cout<<sk.top();
+    
+    // we cannot iterate the stack, but in the workaround
+    //using pop and top
+    //while(!sk.empty())
+    while(sk.empty() == false){
+        cout<<sk.top()<<endl;
+        sk.pop();
+    }
+    
+    return 0;
+}
