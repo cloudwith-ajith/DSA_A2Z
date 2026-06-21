@@ -58,3 +58,46 @@ int main(){
     print(n,name);
     return 0;
 }
+
+// 1 to N
+#include<bits/stdc++.h>
+using namespace std;
+
+int cmt = 1 ;
+void print(int n){
+    if(cmt==n+1){
+        return;
+    }else{
+        cout<<cmt<<" ";
+        cmt++;
+        print(n);
+    }
+}
+
+int main(){
+    int n;
+    cin>>n;
+    print(n);
+    return 0;
+}
+
+//better version 
+#include <iostream>
+using namespace std;
+
+// No global variables
+void print(int cmt, int n) {
+    if (cmt > n) { // Base Case: Stop when counter exceeds N
+        return;
+    }
+    cout << cmt << " ";
+    print(cmt + 1, n); // Move to the next number
+}
+
+int main() {
+    int n;
+    cin >> n;
+    print(1, n); // Start tracking from 1
+    return 0;
+}
+
