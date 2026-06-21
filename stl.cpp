@@ -234,3 +234,23 @@ int main(){
     
     return 0;
 }
+
+//queue
+
+#include<bits/stdc++.h>
+using namespace std;
+//queue
+int main(){
+    queue <int> q;
+    q.push(1);
+    q.push(10);
+    q.push(20);
+    //cout<<q.front()<<" "<<q.back()<<endl;;
+    q.pop();
+    //cout<<q.front()<<endl;
+    while(!q.empty()){
+        cout<<q.front()<<endl;
+        q.pop();
+    }
+    return 0;
+}
