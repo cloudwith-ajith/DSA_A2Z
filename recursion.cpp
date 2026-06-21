@@ -1,3 +1,5 @@
+//what is mean by recursion 
+//"When a function calls itself","until a specified condition"
 #include<bits/stdc++.h>
 using namespace std;
 
