@@ -302,3 +302,17 @@ int main(){
     
     return 0;
 }
+//map
+
+#include<bits/stdc++.h>
+using namespace std;
+// map()v-->{key,value} key must be unique and stored in sorted way
+int main(){
+    map <int ,int> mp;
+    mp.insert({1,2});
+    mp.emplace(2,4);
+    for(auto it : mp){
+        cout<<it.first<<" "<<it.second;
+    }
+    return 0;
+}
