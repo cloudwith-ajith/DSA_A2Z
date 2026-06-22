@@ -101,3 +101,27 @@ int main() {
     return 0;
 }
 
+// sum of the n numbers 
+]#include<bits/stdc++.h>
+using namespace std;
+
+void sum_n(int n,int s,int cmt){
+    if(cmt==n+1){
+        cout<<s;
+        return;
+    }else{
+        s = s + cmt;
+        cmt++;
+        sum_n(n,s,cmt);
+    }
+}
+
+int main(){
+    int n;
+    cout<<"Enter the number: ";
+    cin>>n;
+    int cmt =1;
+    int s = 0;
+    sum_n(n,s,cmt);
+    return 0;
+}
