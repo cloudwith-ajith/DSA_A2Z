@@ -101,6 +101,42 @@ int main() {
     return 0;
 }
 
+// n to 1 backtracking
+#include<bits/stdc++.h>
+using namespace std;
+//4 -->1
+void print(int i,int n){
+    if(i>n){
+        return;
+    }else{
+        print(i+1,n);
+        cout<<i;
+    }
+} 
+
+
+int main(){
+    int n;
+    cin>>n;
+    print(1,n);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // sum of the n numbers 
 ]#include<bits/stdc++.h>
 using namespace std;
@@ -175,4 +211,6 @@ int main() {
 
     return 0;
 }
+
+
 
