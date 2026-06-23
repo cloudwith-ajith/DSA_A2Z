@@ -283,3 +283,20 @@ int main(){
     return 0;
 }
 
+//brut 
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    vector <int> rev;
+    int arr[]={10,20,30,40};
+    int len  = (sizeof(arr)/sizeof(arr[0]));
+    for(int i = len-1; i>=0;i--){
+        rev.emplace_back(arr[i]);
+    }
+    for(auto it : rev){
+        cout<<it<<" ";
+    }
+    return 0;
+}
+
