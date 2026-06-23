@@ -243,3 +243,26 @@ int main(){
     cout<<sum_n(n);
     return 0;
 }
+
+//using recursion
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void rev(int i,int arr[]){
+    if(i < 0){
+        return;
+    }else{
+        cout<<arr[i]<<" ";
+        rev(i-1,arr);
+    }
+}
+
+int main(){
+    int arr[]={1,2,3,4,5};
+    int i = sizeof(arr)/sizeof(arr[0]);
+    rev(i-1,arr);
+    return 0;
+}
+
