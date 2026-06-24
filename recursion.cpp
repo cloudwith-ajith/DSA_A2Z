@@ -491,4 +491,25 @@ int main() {
     return 0;
 }
 
+//using array done by me 
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n = 5;
+    int arr[n+1];
+    
+    if(n ==0 ) cout<<0;
+    arr[0]=0;
+    arr[1]=1;
+    for(int i =2; i <= n;i++){
+        arr[i]=arr[i-1]+arr[i-2];
+    }
+    
+    for(int x=0;x <=n;x++){
+        cout<<arr[x]<<" ";
+    }
+    return 0;
+}
+
 
