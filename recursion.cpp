@@ -432,4 +432,29 @@ int main(){
     }
     return 0;
 }
+///fibonacci, my way
+#include<bits/stdc++.h>
+using namespace std;
+
+void factorial(int n){
+    int a = 0;
+    int b = 1;
+    cout<<a<<" "<<b<<" ";
+    for(int i = 2; i <=n ; i++){
+        int c = a + b;
+        cout<<c<<" ";
+        a = b;
+        b = c;
+    }
+}
+
+
+int main(){
+    int n;
+    cout<<"enter the number: ";
+    cin>>n;
+    factorial(n);
+    return 0;
+}
+
 
