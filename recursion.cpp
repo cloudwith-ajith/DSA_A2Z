@@ -513,3 +513,28 @@ int main(){
 }
 
 
+// fibn using the recursion by muself
+#include<bits/stdc++.h>
+using namespace std;
+
+void f(int arr[],int n,int i){
+    if (i > n) return ;
+    else{
+        arr[i] = arr[i-1] +arr[i -2];
+        f(arr,n,i+1);
+    }
+}
+
+int main(){
+    int n = 5;
+    int arr[n+1];
+    arr[0] = 0;
+    arr[1] = 1;
+    f(arr,n,2);
+    for(int x : arr){
+        cout<<x<<" ";
+    }
+    return 0;
+}
+
+
