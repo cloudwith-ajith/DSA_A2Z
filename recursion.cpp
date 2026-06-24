@@ -406,3 +406,30 @@ int main(){
     }
 }
 
+//my way palindrome
+#include<bits/stdc++.h>
+using namespace std;
+
+bool pali(string name){
+    int end = name.length()-1;
+    for(int i =0; i < end;i++){
+        if (name[i] != name[end]){
+            return false;
+            break;
+        }else{
+            end--;
+        }
+    }return true;
+}
+
+int main(){
+    string name = "madvbam";
+
+    if(pali (name)== true){
+        cout<<"pali";
+    }else{
+        cout<<"no pali";
+    }
+    return 0;
+}
+
