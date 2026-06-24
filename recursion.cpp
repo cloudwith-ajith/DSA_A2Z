@@ -382,3 +382,27 @@ int main(){
     }
     return 0;
 }
+
+//recursion
+#include<bits/stdc++.h>
+using namespace std;
+
+bool palindrome(string& s,int start){
+    if(start >= s.length()/2) return true;
+    
+    if (s[start] != s[s.length()-start-1]) return false;
+    
+    return palindrome(s, start +1);
+}
+
+
+int main(){
+    string s ="madam";
+    bool ans =palindrome(s,0);
+    if (ans == true){
+        cout<<"palindrome";
+    }else{
+        cout<<"Not palindrome";
+    }
+}
+
