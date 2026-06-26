@@ -573,4 +573,33 @@ int main() {
     return 0;
 }
 
+//short
+#include<bits/stdc++.h>
+using namespace std;
+
+int ssort(int arr[],int i,int n){
+    if (i >= n-1){
+        return 1;
+    }else{
+        if (arr[i] > arr[i+1]){
+            return 0;
+        } 
+        return ssort(arr,i+1,n);
+    }
+}
+
+
+
+int main(){
+    int arr[] = {1,2,3,4,5,6};
+    if (ssort(arr,0,6) == true){
+        cout<<"sort";
+    }else{
+        cout<<"unsorted";
+    }
+    
+    return 0;
+}
+
+
 
