@@ -554,4 +554,23 @@ int main(){
     return 0;
 }
 
+// Problem 2 (Count Digits)!
+
+#include <iostream>
+using namespace std;
+
+int countDigits(int n) {
+    // 1. Write your base case here
+    if(n==0) return 0;
+    
+    return 1 + countDigits(n/10);
+    // 2. Write your recursive logic here
+}
+
+int main() {
+    int num = 48239;
+    cout << countDigits(num) << endl; // Should output 5
+    return 0;
+}
+
 
