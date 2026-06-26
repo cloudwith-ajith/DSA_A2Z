@@ -537,4 +537,21 @@ int main(){
     return 0;
 }
 
+// sum of n numbers
+#include<bits/stdc++.h>
+using namespace std;
+
+int nums(int n){
+    if(n == 1){
+        return 1;
+    }else{
+         return n + nums(n-1);
+    }
+}
+
+int main(){
+    cout<<nums(5);
+    return 0;
+}
+
 
