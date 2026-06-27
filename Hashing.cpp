@@ -72,6 +72,26 @@ int main(){
     return 0;
 }
 
+//counting the char using hashing for the uppercase 
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string s = "MADAM";
+    int hash[26] = {0};
+    //pre process
+    for(int i = 0; i < s.length();i++){
+        hash[s[i]-'A'] += 1;
+    }
+    //fetch
+    char target = 'M';
+    cout<<hash[target-'A'];
+    
+    return 0;
+}
+
+
+
 
 
 
