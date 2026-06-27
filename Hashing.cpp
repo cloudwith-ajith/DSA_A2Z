@@ -90,6 +90,23 @@ int main(){
     return 0;
 }
 
+// 256 character 
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string s = "Madam,this is ajith ";
+    int hash[256] = {0};
+    //pre process
+    for(int i = 0; i < s.length();i++){
+        hash[s[i]] += 1;
+    }
+    //fetch
+    char target = ',';
+    cout<<hash[target];
+    
+    return 0;
+}
 
 
 
