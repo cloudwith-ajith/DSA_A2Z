@@ -108,6 +108,25 @@ int main(){
     return 0;
 }
 
+//couting the number in the array using the hashing with map data structure 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int arr[] ={1,2,2,4,6,1};
+    map <int,int> mpp;
+    //pre process
+    for(int i = 0; i < sizeof(arr)/sizeof(arr[0])+1;i++ ){
+        // just create the key and store the value
+        mpp[arr[i]] = mpp[arr[i]] + 1;
+    }
+    //fetch
+    int num = 6;
+    cout<<mpp[num];
+    return 0;
+}
+
 
 
 
