@@ -15,3 +15,22 @@ int main(){
     cout<<hash[fetch]<<" "<< "is the count";
     return 0;
 }
+
+
+//count character present in the string using brute force methoed
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string s  = "madam";
+    int count = 0;
+    char target = 'm';
+    for(int i =0; i < s.length();i++){
+        if(s[i]==target){
+            count += 1;
+        }
+    }
+    cout<<count;
+    return 0;
+}
