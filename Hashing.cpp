@@ -51,7 +51,7 @@ int main(){
     return 0;
 }
 
-// cout character using hashing
+// cout character using hashing for small letter
 
 #include<bits/stdc++.h>
 using namespace std;
