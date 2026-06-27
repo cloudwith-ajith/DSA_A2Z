@@ -16,6 +16,22 @@ int main(){
     return 0;
 }
 
+// char and ascii relation
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    //The lowercase letter 'a' has a decimal ASCII value of 97
+    char a = 'a';
+    //Lowercase 'b': 98 (Decimal)
+    char b = 'b';
+    // 97 - 98 = -1;
+    cout<<a-b;
+    return 0;
+}
+
+
+
 
 //count character present in the string using brute force methoed
 
