@@ -168,6 +168,43 @@ int main(){
 }
 
 
+//hashing problem statement 2
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int arr[] ={1,2,2,4,4,4,6,1,5,5,1,1,1,1,1,1};
+    map <int,int> mpp;
+    //pre process
+    for(int i = 0; i < sizeof(arr)/sizeof(arr[0]);i++ ){
+        // just create the key and store the value
+        mpp[arr[i]] = mpp[arr[i]] + 1;
+    }
+    //fetch
+    //int num = 6;
+    //cout<<mpp[num];
+    
+    int maxx = 0;
+    int max_second = 0;
+    for(auto y : mpp){
+        if(y.second>max_second){
+            max_second =  y.second ;
+            maxx = y.first;
+        }
+    }
+    cout<<maxx<<" ";
+    
+    int mini = 1;
+    for(auto x : mpp){
+        if(x.second == mini){
+            cout<<x.first<<" ";
+        }
+    }
+    return 0;
+}
+
+
 
 
 
