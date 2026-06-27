@@ -147,6 +147,25 @@ int main(){
     
 }
 
+//unordered map ------using this is the best for time complexity ,o(1)
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string s = "madam";
+    unordered_map <char,int> mpp;
+    
+    //pre process
+    for(int i = 0;i < s.size();i ++){
+        mpp[s[i]] += 1;
+    }
+    
+    //fetch 
+    char target = 'm';
+    cout<<mpp[target];
+    return 0;
+    
+}
 
 
 
