@@ -34,3 +34,33 @@ int main(){
     cout<<count;
     return 0;
 }
+
+// cout character using hashing
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string s = "madam";
+    int hash[26] = {0};
+    //pre process
+    for(int i = 0; i < s.length();i++){
+        hash[s[i]-'a'] += 1;
+    }
+    //fetch
+    char target = 'm';
+    cout<<hash[target-'a'];
+    
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
