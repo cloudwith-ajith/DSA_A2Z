@@ -45,6 +45,8 @@ int main(){
     int hash[26] = {0};
     //pre process
     for(int i = 0; i < s.length();i++){
+            //ascii value for m -->109 - 97 = 12
+            //in hash array index 12 goin to increase by one 
         hash[s[i]-'a'] += 1;
     }
     //fetch
