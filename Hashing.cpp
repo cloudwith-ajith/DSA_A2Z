@@ -204,6 +204,12 @@ int main(){
     return 0;
 }
 
+// hashing work in three differnt way 
+// division method 
+// mid square method
+// folding methoed
+
+
 
 
 
