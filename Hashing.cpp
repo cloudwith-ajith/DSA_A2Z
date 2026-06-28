@@ -209,6 +209,12 @@ int main(){
 // mid square method
 // folding methoed
 
+// hashing using the map --->Time complexity is O(log n)
+// hashing using the unordered_map ---> Time complexity is O(1), worst case that too rare O(n)
+// why this differnce?
+
+// map used to sort the value, its take the n values and sort for the single input, its make the Time complexity as O(log n )
+//unordered_map dont use the sorting method its stored un ordered so, the sort method redused. and the TC is o(1)
 
 
 
