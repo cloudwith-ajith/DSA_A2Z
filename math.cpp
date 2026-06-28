@@ -10,7 +10,7 @@ int main(){
         cout<<endl;
     }
     return 0;
-}
+}  
 
 //using formula for the AP
 
