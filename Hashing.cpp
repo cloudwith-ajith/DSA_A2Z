@@ -242,6 +242,29 @@ int main(){
     return 0;
 }
 
+//hasing with string dtype
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    string arr[] = {"ajith","ajith","mani","vincy","fana","ajith"};
+    
+    unordered_map <string,int> mpp;
+    
+    //preprocess
+    for(int i = 0;i < sizeof(arr)/sizeof(arr[0]);i++){
+        mpp[arr[i]]++;
+    }
+    //fetch
+    
+    string s = "fana";
+    cout<<mpp[s];
+    
+    
+    return 0;
+}
+
    
 
 
