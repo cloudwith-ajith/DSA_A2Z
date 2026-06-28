@@ -203,7 +203,7 @@ int main(){
     }
     return 0;
 }
-
+// THINKS TO KNOW 
 // hashing work in three differnt way 
 // division method 
 // mid square method
