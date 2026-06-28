@@ -216,6 +216,32 @@ int main(){
 // map used to sort the value, its take the n values and sort for the single input, its make the Time complexity as O(log n )
 //unordered_map dont use the sorting method its stored un ordered so, the sort method redused. and the TC is o(1)
 
+
+// execise
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    int arr[]={1,2,3,4,5,5,6,6,7,6,8,8,9,9};
+    
+    unordered_map <int, int> mpp;
+    
+    //preprocess
+    
+    for(int i = 0; i < sizeof(arr)/sizeof(arr[0]);i++){
+        mpp[arr[i]] = mpp[arr[i]] + 1;
+    }
+    
+    //fetch
+    
+    int target = 6;
+    cout<<mpp[target];
+    
+    
+    return 0;
+}
+
    
 
 
