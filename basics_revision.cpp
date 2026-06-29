@@ -64,5 +64,6 @@ int main(){
     cout<<hash[c -'a'];
     return 0;
 }
-
+// same as the upper case  hash[s[i]-'A'] 
+// 256 for all the char hash[s[i]]
 // TC of the code is O(n)
