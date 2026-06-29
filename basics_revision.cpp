@@ -45,6 +45,6 @@ int main(){
         mpp[arr[i]]++;
     }
     int target = 1;
-    cout<<hash[target];
+    cout<<mpp[target];
     return 0;
 }
