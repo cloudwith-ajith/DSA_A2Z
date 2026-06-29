@@ -49,7 +49,8 @@ int main(){
     return 0;
 }
 
-// frequence in string 
+-----------------------------------------------------------------------------
+// frequence in string hashing array
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -63,3 +64,5 @@ int main(){
     cout<<hash[c -'a'];
     return 0;
 }
+
+// TC of the code is O(n)
