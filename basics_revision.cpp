@@ -65,5 +65,20 @@ int main(){
     return 0;
 }
 // same as the upper case  hash[s[i]-'A'] 
-// 256 for all the char hash[s[i]]
 // TC of the code is O(n)
+
+//all char
+// 256 for all the char hash[s[i]] -->here the hash[] automatically convert into the index value
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string s = "AjithKumar";
+    int hash [256] = {0};
+    for(int i = 0 ; i < s.length();i++){
+        hash[s[i]]++;
+    }
+    char c = 'A';
+    cout<<hash[c];
+    return 0;
+}
