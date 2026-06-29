@@ -82,3 +82,19 @@ int main(){
     cout<<hash[c];
     return 0;
 }
+
+// using unordered mapp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string s = "AjithKumar";
+    unordered_map <char,int> mpp;
+    for(int i = 0 ; i < s.length();i++){
+        mpp[s[i]]++;
+    }
+    char c = 'A';
+    cout<<mpp[c];
+    return 0;
+}
+//TC is O(1)
