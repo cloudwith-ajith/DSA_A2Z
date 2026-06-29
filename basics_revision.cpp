@@ -98,3 +98,35 @@ int main(){
     return 0;
 }
 //TC is O(1)
+//min and max element in the array
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    int arr[]= {1,2,3,4,5,5,5,5,6,7,7};
+    map <int,int> mpp;
+    
+    for(int i = 0; i < sizeof(arr)/sizeof(arr[0]);i++){
+        mpp[arr[i]]++;
+    }
+    
+    //int target = 5;
+    //cout<<mpp[target];
+    int max = 0;
+    int min = 1;
+    for(auto x:mpp){
+        if (x.second == min){
+            cout<<x.first<<" ";
+        }
+    }cout<<endl;
+    int maxx =0;
+    for(auto x : mpp){
+        if(max < x.second){
+            max = x.second;
+            maxx = x.first;
+        }
+    }
+    cout<< maxx<< " ";
+    return 0;
+}
