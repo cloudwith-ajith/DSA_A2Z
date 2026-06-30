@@ -276,4 +276,22 @@ int main(){
     print(n);
     return 0;
 }
+// 1 to namespace
+#include<bits/stdc++.h>
+using namespace std;
+
+void print(int start,int n ){
+    if(start > n){
+        return;
+    }else{
+        cout<<start<<" ";
+    }
+    print(start+1,n);
+}
+
+int main(){
+    int n = 5;
+    print(1,n);
+    return 0;
+}
 
