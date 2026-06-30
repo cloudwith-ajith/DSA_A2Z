@@ -315,3 +315,27 @@ int main(){
     return 0;
 }
 
+//backtracking n to 1
+#include<bits/stdc++.h>
+using namespace std;
+
+//backtracking
+void print(int n,int start){
+    if (start > n){
+        return;
+    }else{
+        print(n,start+1);
+        cout<<start<<" ";
+    }
+}
+
+
+
+
+int main(){
+    int n = 5;
+    print(n,1);
+    return 0;
+}
+
+
