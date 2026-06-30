@@ -218,3 +218,29 @@ int main(){
 }
 
 //the tc is log n 
+
+
+//factorial
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int fac(int n){
+    if(n == 0){
+        return 1;
+    }else{
+        return (n * fac(n-1));
+    }
+}
+
+
+int main(){
+    int n = 3;
+    cout<<fac(n);
+    return 0;
+}
+
+
+
+//sum of the n numbes
+
