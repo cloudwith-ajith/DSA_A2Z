@@ -154,3 +154,34 @@ int main(){
     cout<<a;
     return 0;
 }
+
+
+
+//pallindrome or not 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+bool pallindrome(string s, int i){
+    if (i > s.length()/2){
+        return true;
+    }else{
+        if(s[i] != s[s.length()-i-1]){
+            return false;
+        }
+    return pallindrome(s,i+1);
+    }
+}
+
+
+int main(){
+    string s = "madem";
+    if (pallindrome(s,0) == true){
+        cout<<"its pallindrome";
+    }else{
+        cout<<"not a pallindrome";
+    }
+    return 0; 
+}
+
+// its tc is log n bcz its using the half checking
