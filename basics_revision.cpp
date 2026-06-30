@@ -295,3 +295,23 @@ int main(){
     return 0;
 }
 
+/// printing the name n times 
+#include<bits/stdc++.h>
+using namespace std;
+
+void print(int start,string s,int e ){
+    if(start >e ){
+        return;
+    }else{
+        cout<<s<<" ";
+    }
+    print(start+1,s,e);
+}
+
+int main(){
+    string n = "ajith";
+    int e = 3; 
+    print(1,n,e );
+    return 0;
+}
+
