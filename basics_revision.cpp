@@ -185,3 +185,36 @@ int main(){
 }
 
 // its tc is log n bcz its using the half checking
+
+
+
+//reverse the array
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+//recursion
+
+int rev(int arr[],int start,int n){
+    if(start > n/2 ){
+        return 0;
+    }else{
+        swap(arr[start],arr[n-start-1]);
+    }
+    return rev(arr,start+1,n);
+}
+
+
+
+int main(){
+    int arr[5] ={1,2,3,4,5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    
+    for(auto x : arr ){
+        cout<<x<<" ";
+    }
+    return 0;
+}
+
+//the tc is log n 
