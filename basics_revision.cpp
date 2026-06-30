@@ -239,8 +239,21 @@ int main(){
     cout<<fac(n);
     return 0;
 }
-
-
-
 //sum of the n numbes
+#include<bits/stdc++.h>
+using namespace std;
 
+int fac(int n){
+    if(n == 0){
+        return 0;
+    }else{
+        return (n + fac(n-1));
+    }
+}
+
+
+int main(){
+    int n = 5;
+    cout<<fac(n);
+    return 0;
+}
