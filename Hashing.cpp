@@ -49,7 +49,7 @@ int main(){
     cout<<count;
     return 0;
 }
-
+  
 // cout character using hashing for small letter
 
 #include<bits/stdc++.h>
