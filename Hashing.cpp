@@ -14,7 +14,7 @@ int main(){
     cout<<hash[fetch]<<" "<< "is the count";
     return 0;
 }  
-
+   
 // char and ascii relation
 #include<bits/stdc++.h>
 using namespace std;
