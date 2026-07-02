@@ -367,3 +367,31 @@ int main(){
     
     return 0;
 }
+----------------------------------------------------------------------------------
+multiple value  
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    int n = 36;
+    set <int> v ;
+    int sq = sqrt(n);
+    
+    for(int i = 1; i <=sq;i++){
+        if(sq % i ==0){
+            v.emplace(i);
+            if(n/i != i){
+                v.emplace(n/i);
+            }
+        }
+    }
+    
+    for(auto i : v){
+        cout<< i<<" ";
+    }
+    
+    return 0;
+}
+
+
