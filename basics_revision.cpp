@@ -338,4 +338,32 @@ int main(){
     return 0;
 }
 
+---------------------------------------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
 
+int main(){
+    
+    int n1 = 9;
+    int n2 = 12;
+    int n = 0;
+    if (n1 ==0 || n2 == 0){
+        cout<<" 0";
+        return 0;
+    }
+    // min value
+    if(n1>n2){
+        n = n2;
+    }else{
+        n =n1;
+    }
+    
+    for (int i = n; i >= 1; i--){
+        if(n1 % i == 0 && n2 % i == 0){
+            cout<<i<<" ";
+            break;
+        }
+    }
+    
+    return 0;
+}
