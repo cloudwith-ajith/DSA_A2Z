@@ -394,4 +394,30 @@ int main(){
     return 0;
 }
 
+-----------------------stl--------------------------
+    #include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    pair <int,int> p1 = {'a',1};
+  
+    cout<<p1.first<<" "<<p1.second; 
+    
+    return 0;
+}
+
+int main(){
+    pair <int,pair<char,string>> p1 ={1,{'a',"ajith"}};
+    // to acess the second value it has the two value, so we use the second.first/second
+    cout<<p1.second.second;
+    
+    pair <string,int> arr[3] = {{"ajith",1},{"mahi",7},{"boomi",27}};
+    for(auto i : arr){
+        cout<<i.first<<" "<<i.second;
+    }
+    return 0;
+}
+
+
+
 
