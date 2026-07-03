@@ -539,3 +539,21 @@ int main() {
 
 }
 
+//---------queue-------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    queue <int> q ;
+    
+    q.emplace(2);
+    q.push(1);
+    cout<<q.front();
+    q.pop();
+    cout<<q.front();
+    
+    return  0;
+}
+
+
