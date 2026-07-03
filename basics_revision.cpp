@@ -469,3 +469,24 @@ int main(){
     return 0;
 }
 
+
+////////////insert---------------------------------
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    vector<int> v(5,10);
+    
+    //v.insert(v.begin()+1,9);
+    v.insert(v.begin()+1,9,1);
+    
+    for(auto c :v){
+        cout<<c<<" ";
+    }
+    
+    return 0;
+}
+
