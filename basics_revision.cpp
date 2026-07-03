@@ -521,3 +521,21 @@ int main() {
 
     return 0;
 }
+
+//////////stack
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+int main() {
+	std::stack<int> stk ;
+	stk.push(1);
+	stk.push(2);
+	cout<<stk.top();
+	stk.pop();
+	cout<<stk.top();
+	return 0;
+
+}
+
