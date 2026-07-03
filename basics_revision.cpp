@@ -421,3 +421,26 @@ int main(){
 
 
 
+/////////////////////////////////////////vector----------------------------------
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main(){
+    ////which id going to  create the 5 space first  and the value whic is return in the space
+    //// vector <int> v(5,28);
+    ////using the for loop 
+    for(auto i : v){
+        cout<<i<<" "; 
+    }
+    
+    vector <int> v(5,28);
+    //using the iterator
+    for(auto i = v.begin();i != v.end();i++){
+        cout<<*(i)<<" "; 
+    }
+    
+    return 0;
+}
+
