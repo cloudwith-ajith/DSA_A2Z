@@ -444,3 +444,28 @@ int main(){
     return 0;
 }
 
+//////////////////////////////////erase---------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    vector <int> v;
+    
+    for(int i  = 1; i <= 10;i++){
+        v.emplace_back(i);
+    }
+    cout<<endl;
+    
+    
+    v.erase(v.begin(),v.begin()+2);
+    
+    for(auto i = v.begin();i != v.end();i++){
+        cout<<*(i)<<" ";
+    }
+    
+    //delect the element using the erase
+    
+    return 0;
+}
+
