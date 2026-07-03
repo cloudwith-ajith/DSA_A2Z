@@ -490,3 +490,34 @@ int main(){
     return 0;
 }
 
+//////////////list ---- everything is simillar
+//but here we can also do the front operation insert-----
+
+#include <iostream>
+#include <list>
+#include <iterator> // Required for std::next
+
+using namespace std;
+
+int main() {
+    list<int> lst = {10, 30, 40, 34, 56, 7, 8, 9};
+
+    // 1. Choose your exact target position index
+    int position = 3; 
+
+    // 2. Move the iterator to that exact position
+    auto it = std::next(lst.begin(), position);
+
+    // 3. Insert 88 right there
+    lst.insert(it, 88);
+
+    // 4. Print the final list
+    for (int x : lst) {
+        cout << x << " ";
+    }
+    // Output: 10 30 40 88 34 56 7 8 9
+    // Index positions now:
+    // 10(0), 30(1), 40(2), 88(3), 34(4)...
+
+    return 0;
+}
