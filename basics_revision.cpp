@@ -579,5 +579,8 @@ int main(){
     
 }
 
+//------------------priority queue-------
+//  -------------default------------------priority_queue<int> maxHeap; // Max-heap
+
 
 
