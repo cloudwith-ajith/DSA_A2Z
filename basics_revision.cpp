@@ -581,6 +581,7 @@ int main(){
 
 //------------------priority queue-------
 //  -------------default------------------priority_queue<int> maxHeap; // Max-heap
+//---------------minimum_heap------------------>priority_queue<int, vector<int>, greater<int>> minHeap; // Min-heap
 
 
 
