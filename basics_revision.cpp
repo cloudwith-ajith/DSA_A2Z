@@ -583,5 +583,20 @@ int main(){
 //  -------------default------------------priority_queue<int> maxHeap; // Max-heap
 //---------------minimum_heap------------------>priority_queue<int, vector<int>, greater<int>> minHeap; // Min-heap
 
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    priority_queue<int> pq;
+   //pushing the element  
+    pq.emplace(10);
+    pq.push(20);
+    cout<<pq.top();
+    // remove the first element like the queue
+	pq.pop();
+    cout<<pq.top();
+    return 0;
+}
+
 
 
