@@ -555,5 +555,29 @@ int main(){
     
     return  0;
 }
+--------------//queue cant be iterate, but using this things may-----------
+#include<bits/stdc++.h>
+using namespace std;
+
+void printqueue(queue<int>qc){
+    while(!qc.empty()){
+        cout<<qc.front()<<" ";
+        qc.pop();
+    }
+}
+
+
+
+int main(){
+    queue <int> q ;
+    q.push(1);
+    q.emplace(2);
+    q.push(11);
+   // if you need to iterate
+    printqueue(q);
+    return 0;
+    
+}
+
 
 
