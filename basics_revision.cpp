@@ -662,4 +662,28 @@ int main(){
     int n =12345;
     palindrome(n);
     return 0;
+}//---------prime
+#include <iostream> // Better practice than <bits/stdc++.h>
+using namespace std;
+
+bool prm(int n) {
+    if (n <= 1) return false; // Handles 0, 1, and negative numbers
+    if (n == 2) return true;  // 2 is the only even prime number
+    if (n % 2 == 0) return false; // Excludes all other even numbers
+
+    // Loop only up to the square root of n (i * i <= n)
+    // Step by 2 to skip checking even numbers
+    for (int i = 3; i * i <= n; i += 2) {
+        if (n % i == 0) return false;
+    }
+    
+    return true;
 }
+
+int main() {
+    int n = 12;
+    if (prm(n)) cout << "prime";
+    else cout << "not a prime";
+    return 0;
+}
+
