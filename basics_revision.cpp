@@ -639,3 +639,27 @@ int main(){
     cout<<rev(n);
     return 0;
 }
+
+//palindrome
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+void palindrome(int n){
+    int rev = 0;
+    while(n != 0){
+        int i = n % 10;
+        n = n/10;
+        rev = (rev * 10) + i ;
+    }
+    if(rev == n) cout<< "palindrome";
+    cout<< "not a palindrome";
+}
+
+
+int main(){
+    int n =12345;
+    palindrome(n);
+    return 0;
+}
