@@ -849,6 +849,29 @@ int main(){
 // A B C D 
 // A B C D E 
 
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    char ch = 'A';
+    for(int i = 0; i < 5; i++){
+        for(char j = 'A' ; j <= 'A'+i; j++){
+            
+            cout<<ch<<" ";
+        }cout<<endl;
+        
+        ch++;
+    }
+    return 0;
+}
+// A 
+// B B 
+// C C C 
+// D D D D 
+// E E E E E 
+
+
+
 
 #include<bits/stdc++.h>
 using namespace std;
