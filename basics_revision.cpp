@@ -9,7 +9,7 @@ int main(){
     for(int i =0;i < sizeof(arr)/sizeof(arr[0]);i++){
         if(arr[i] == target){
             count++;
-        }
+        } 
     }
     cout<<target<<"---->"<<count;
     return 0;
