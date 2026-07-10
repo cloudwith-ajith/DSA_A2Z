@@ -19,3 +19,24 @@ int main(){
     
     return 0;
 }
+
+-------------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int arr[5] = {7,12,9,11,3};
+    int n  = sizeof(arr)/sizeof(arr[0]);
+    
+    for(int i = 0; i <= n-1; i++){
+        int j = i;
+        while(j > 0 && arr[j-1] > arr[j] ){
+            swap(arr[j-1],arr[j]);
+            j--;
+        }
+    
+    }
+    
+    for(int i : arr) cout<<i<<" ";
+    return 0;
+}
