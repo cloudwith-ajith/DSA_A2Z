@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-
 int main(){
     
     int arr[6] = {7,12,9,11,13,1};
