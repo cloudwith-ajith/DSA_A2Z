@@ -70,7 +70,7 @@ int sort(int arr[],int low,int high){
     swap(arr[i+1],arr[high]);
     return i + 1;
 }
-
+  
 void Quick_sort(int arr[],int low, int high){
     //basecase
     if(low >= high){
