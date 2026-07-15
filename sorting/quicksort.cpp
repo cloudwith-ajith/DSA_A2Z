@@ -1,3 +1,53 @@
+-------------------------quick sort with the front element
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int partition(int arr[],int low,int high){
+    //picking the pivot to the first element
+    int pivot = arr[low];
+    int i = low;
+    int j = high;
+    
+    while(i < j){
+        while(arr[i] <= pivot && i < high){
+            i++;
+        } 
+        while(arr[j] > pivot && j > low){
+            j--;
+        }
+        if(i < j){
+            swap(arr[i],arr[j]);
+        }
+    }
+    swap(arr[low],arr[j]);
+    return j;
+}
+
+
+void Quick_sort(int arr[],int low, int high){
+    if(low<high){
+        int SI = partition(arr,low,high);
+        Quick_sort(arr,low,SI-1);
+        Quick_sort(arr,SI+1,high);
+    }
+}
+
+
+int main(){
+    int arr[6] = {4,1,29,3,14,7};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    Quick_sort(arr,0,n-1);
+    for(int i : arr){cout<<i<<" ";}
+    return 0;
+}
+
+
+
+
+
+
 ---------------------------cpp quick sort with the last element
 #include<bits/stdc++.h>
 using namespace std;
