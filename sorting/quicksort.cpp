@@ -1,6 +1,4 @@
 -------------------------quick sort with the front element
-
-
 #include<bits/stdc++.h>
 using namespace std;
 
