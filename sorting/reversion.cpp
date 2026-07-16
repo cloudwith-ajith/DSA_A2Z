@@ -122,3 +122,25 @@ int main(){
     }
     return 0;
 }
+
+----------insertion
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int arr[6] = {34,7,23,32,5,62};
+    int n = sizeof(arr)/ sizeof(arr[0]);
+    for(int i = 0; i < n; i++){
+        int j = i;
+        while(j > 0 && arr[j-1] > arr[j]){
+            swap(arr[j],arr[j-1]);
+            j--;
+        }
+    }
+    
+    for(int i  :  arr){
+        cout<<i <<" ";
+    }
+    return 0;
+}
+
