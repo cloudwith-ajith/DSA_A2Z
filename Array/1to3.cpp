@@ -46,4 +46,25 @@ int main(){
     cout<<arr[arr.size()-1];
     return 0;
 }
---
+// --------------------------------second --largest element in the array
+// --brute force method
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int arr[5] ={39,33,21,39,39};
+    int n = size(arr);
+    
+    sort(arr,arr+n);
+    
+    int second_large = n-2;
+    for(int i = n-1;i > 2;i--){
+        if(arr[i] != arr[second_large]){
+            break;
+        }else{
+            second_large =second_large - 1;
+        }
+    }
+    cout<<arr[second_large];
+    return 0;
+}
