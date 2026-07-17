@@ -1,7 +1,7 @@
-----------------------------------------cpp
+// ----------------------------------------cpp
 
---largest element in the array
---my code
+// --largest element in the array
+// --my code
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -19,5 +19,20 @@ int main(){
     int arr[5] ={2,5,1,3,0};
     int n = size(arr);
     cout<<max_element(arr,n);
+    return 0;
+}
+
+//--using the sorted method
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int arr[5] ={2,5,1,3,0};
+    int n = size(arr);
+    sort(arr,arr+n);
+    // for(int i :arr){cout<<i<<" ";}
+    // return 0;
+    
+    cout<<arr[n-1];
     return 0;
 }
