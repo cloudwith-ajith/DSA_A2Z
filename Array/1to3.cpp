@@ -68,3 +68,29 @@ int main(){
     cout<<arr[second_large];
     return 0;
 }
+
+//---------better
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int arr[6] ={1,4,3,2,10,7};
+    int n =size(arr);
+    
+    int max = 0;
+    for(int i = 1;i < n;i++){
+        if(arr[i] > arr[max]){
+            max = i;
+        }
+    }
+    int s_max =0;
+    for(int i =0;i < n;i++){
+        if(arr[i] > arr[s_max] && arr[i] < arr[max]){
+            s_max = i;
+        }
+    }
+    cout<<arr[s_max];
+    return 0;
+}
+
