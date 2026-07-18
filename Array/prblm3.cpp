@@ -20,3 +20,36 @@ int main(){
     cout<<unique(arr,n);
     return 0;
 }
+
+//-------------brute for method
+#include<bits/stdc++.h>
+using namespace std;
+
+int func(int arr[],int n ){
+    vector <int> temp;
+    int i = -1 ;
+    for(int j = 0;j <= n-1; j++){
+        if(arr[j] != arr[j+1]){
+            i++;
+            temp.push_back(arr[j]);
+        }
+    }
+    
+    for(int k =0; k <= i;k++){
+        arr[k] = temp[k];
+    }
+    
+    return i+1;
+} 
+
+
+
+int main(){
+    int arr[] = {1,2,2,3,3,3,4,4,4,5,6,6,7,7};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    cout<<func(arr,n)<<"\n";
+    for(int a :arr){
+        cout<<a<<" ";
+    }
+    return 0;
+}
