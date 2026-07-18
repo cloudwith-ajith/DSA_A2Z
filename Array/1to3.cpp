@@ -98,22 +98,19 @@ int main(){
 #include<bits/stdc++.h>
 using namespace std;
 
-
-bool ch_ar(int arr[],int n ){
-    for(int i = 0; i < n-1;i++){
-        if (arr[i] > arr[i+1]){
-            return false;
+bool check_sorted(int arr[],int n ){
+    for(int i =0;i < n-1; i++){
+        if(arr[i] > arr[i+1]){
+            return false; 
         }
     }
     return true;
 }
 
-
 int main(){
-    int arr[5] ={1,2,3,4,3};
-    int n =sizeof(arr)/sizeof(arr[0]);
-    bool x = ch_ar(arr,n);
-    if(x == true){
+    int arr[4] = {9,2,3,4};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    if(check_sorted(arr,n) == true){
         cout<<"sorted";
     }else{
         cout<<"unsorted";
