@@ -53,3 +53,32 @@ int main(){
     }
     return 0;
 }
+//optimal solution 
+#include<bits/stdc++.h>
+using namespace std;
+
+int func(int arr[],int n ){
+    
+    int i =0;
+    
+    for(int j =1; j <= n-1;j++){
+        if(arr[j] != arr[j+1]){
+            i++;
+            arr[i]=arr[j];
+        }
+    }
+    
+    return i+1;
+} 
+
+
+
+int main(){
+    int arr[] = {1,2,2,3,3,3,4,4,4,5,6,6,7,7};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    cout<<func(arr,n)<<"\n";
+    for(int a :arr){
+        cout<<a<<" ";
+    }
+    return 0;
+}
