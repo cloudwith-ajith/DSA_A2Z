@@ -2,7 +2,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
 int unique(int arr[],int n){
     int i = 0;
     for(int j =0;j < n-1;j++){
