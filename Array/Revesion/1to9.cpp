@@ -44,3 +44,33 @@ int main(){
 
 // tc is O(n) linear to the end 
 //sp is O(1)
+
+//-------------SECOND LARGESET ELEMENT 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int arr[] ={3,2,6,4,0,8};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    
+    int max = arr[0];
+    for(int i = 0;i < n;i ++){
+        if(arr[i] > max){
+            max = arr[i];
+        }
+    }
+    
+    int second_max = INT_MIN;
+    
+    for(int j = 0; j < n; j++){
+        if(arr[j] > second_max && arr[j] != max){
+            second_max = arr[j];
+        }
+    }
+    
+    cout<<second_max;
+    
+    return 0;
+}
+// tc ----O(2n)
