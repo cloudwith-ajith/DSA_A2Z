@@ -432,3 +432,43 @@ int main(){
     return 0;
 }
 
+//============intersection
+#include<bits/stdc++.h>
+using namespace std;
+
+vector <int> intersection(vector<int>a1,vector<int>a2){
+    int n1 = a1.size();
+    int n2 = a2.size();
+    int i = 0;
+    int j = 0;
+    vector <int> temp;
+    while(i < n1 && j < n2){
+        if (a1[i] < a2[j]){
+            i++;
+        }
+        else if(a1[i] > a2[j]){
+            j++;
+        }
+        else{
+            if(temp.empty() || temp.back() != a1[i]){
+                temp.push_back(a1[i]);
+            }
+            i++;
+            j++;
+        }
+    }
+    return temp;
+}
+
+
+int main(){
+    vector <int> a1 = {1,1,2,2,3,3,4,4,5,5};
+    vector <int> a2 = {1,2,2,3,3,4};
+    vector <int> result =intersection(a1,a2);
+    
+    for(int i : result){
+        cout<<i<<" ";
+    }
+    return 0;
+}
+
