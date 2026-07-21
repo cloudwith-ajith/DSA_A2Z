@@ -74,3 +74,31 @@ int main(){
     return 0;
 }
 // tc ----O(2n)
+
+
+
+
+//------------------check the array is sorted or not 
+#include<bits/stdc++.h>
+using namespace std;
+
+bool check_sorted(int arr[],int n ){
+    for(int i = 0; i < n-1; i++){
+        if(arr[i] > arr[i+1]){
+            return false;
+        }
+    }
+    return true;
+}
+
+int main(){
+    int arr[] ={1,2,6,4,5};
+    int n = sizeof(arr)/ sizeof(arr[0]);
+    if(check_sorted(arr,n) ==true){
+        cout<<"sorted";
+    }else{
+        cout<<"unsorted";
+    }
+    
+    return 0;
+}//----tc is O(n)
