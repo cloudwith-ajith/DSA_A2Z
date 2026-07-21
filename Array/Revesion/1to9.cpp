@@ -102,3 +102,38 @@ int main(){
     
     return 0;
 }//----tc is O(n)
+
+
+//--------------------Remove Duplicates in-place from Sorted Array
+//------------------optimal solution 
+//-------tc is o(n)
+#include<bits/stdc++.h>
+using namespace std;
+
+int unique(int arr[], int n ){
+    int un = 0;
+    for(int i = 0; i < n-1; i++){
+        if(arr[i] != arr[i+1]){
+            un++;
+            arr[un] = arr[i+1];
+        }
+    }
+    
+    return un + 1;
+}
+
+int main(){
+    int arr[] = {1,1,1,2,2,2,3,3,4,4,};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int result = unique(arr,n);
+    
+    cout<<result<<endl;
+    
+    for(int i : arr){
+        cout<<i<<" ";
+    }
+    
+    
+    return 0;
+}
+
