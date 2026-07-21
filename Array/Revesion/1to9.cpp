@@ -191,3 +191,30 @@ int main(){
 
 //output 3 2 1 2 2 3 3 
 
+//----------------brute force for the one rotate
+#include<bits/stdc++.h>
+using namespace std;
+
+void rotate(int arr[],int n){
+    vector <int> temp(n);
+    for(int i = 1; i < n; i++){
+        temp[i-1] = arr[i];
+    }
+    temp[n-1] = arr[0];
+    
+    for(int j = 0; j < n; j++){
+        arr[j] = temp[j];
+    }
+}
+
+int main(){
+    int arr[] = {1,2,3,4,5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    rotate(arr,n);
+    for(int n : arr){
+        cout<<n<<" "; 
+    }
+    return 0;
+}
+
+
