@@ -217,4 +217,218 @@ int main(){
     return 0;
 }
 
+//-------------left rotate, k ELEMENT
+//----------------brute-
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void rotate(int arr[],int k,int n ){
+    int temp[n];
+    for(int i = k; i < n; i++){
+        temp[i - k] = arr[i];
+    }
+    for(int j = 0; j < k; j++){
+        temp[(n-k)+j] =arr[j];
+    }
+     for(auto i : temp){
+        cout<<temp[i]<<" ";
+    }
+    
+}
+
+int main(){
+    int arr[] ={1,2,3,4,5};
+    int k = 2;
+    int n = sizeof(arr)/sizeof(arr[0]);
+    rotate(arr,k,n);
+    return 0;
+}
+
+//-----------------right rotate, k ELEMENT
+//---------------------optimal
+#include<bits/stdc++.h>
+using namespace std;
+
+void reverse(int arr[],int start,int end){
+    while (start < end){
+        swap(arr[start],arr[end]);
+        start++;
+        end--;
+    }
+}
+
+void rotate_right(int arr[],int k,int n){
+    
+    k = k % n;
+    //reverse the whole array
+    reverse(arr,0,n-1);
+    //reverse the first k elemet
+    reverse(arr,0,k-1);
+    //reverse the balance element
+    reverse(arr,k,n-1);
+}
+
+int main(){
+    int arr[] = {1,2,3,4,5,6};
+    int n = sizeof(arr)/ sizeof(arr[0]);
+    int k = 2;
+    rotate_right(arr,k,n);
+    
+    for(int n : arr){
+        cout<<n<<" ";
+    }
+    return 0;
+}
+
+//---------------------optimal left rotate_right
+#include<bits/stdc++.h>
+using namespace std;
+
+void reverse(int arr[],int start,int end){
+    while (start < end){
+        swap(arr[start],arr[end]);
+        start++;
+        end--;
+    }
+}
+
+void rotate_right(int arr[],int k,int n){
+    
+    k = k % n;
+    //reverse the first k elemet
+    reverse(arr,0,k-1);
+    //reverse the balance element
+    reverse(arr,k,n-1);
+    //reverse the whole array
+    reverse(arr,0,n-1);
+}
+
+int main(){
+    int arr[] = {1,2,3,4,5,6};
+    int n = sizeof(arr)/ sizeof(arr[0]);
+    int k = 2;
+    rotate_right(arr,k,n);
+    
+    for(int n : arr){
+        cout<<n<<" ";
+    }
+    return 0;
+}
+
+//----------------linear search
+//------tc is O(n)
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int arr[] = {28,5,8,3};
+    int n = size(arr);
+    int s = 3;
+    
+    for(int i = 0; i < n; i++){
+        if(arr[i] == s){
+            cout<<"element in the "<<i <<" position";
+            break;
+        }
+    }
+    
+    return 0;
+    
+}
+//------------------------ union 
+//---------------------brute
+
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int> union_set(int arr1[],int arr2[],int n1,int n2){
+    set <int> temp;
+    //first array
+    for(int i = 0; i< n1; i++){
+        temp.emplace(arr1[i]);
+    }
+    //second array
+    for(int j = 0; j < n2; j++){
+        temp.emplace(arr2[j]);
+    }
+    
+    vector<int> result(temp.begin(),temp.end());
+    return result;
+}
+
+
+int main(){
+    int arr1[] ={1,2,3,4,5};
+    int arr2[] = {2,3,4,4,5};
+    int n1 = size(arr1);
+    int n2 = size(arr2);
+    vector <int> result = union_array(arr1,arr2,n1,n2); 
+    
+    for(int i : result){
+        cout<<i<<" ";
+    }
+    return 0;
+}
+
+
+
+
+//------------------------------ union ---------------------optimal
+#include<bits/stdc++.h>
+using namespace std;
+
+vector <int> union_array(vector<int> a,vector<int> b){
+    vector <int> temp;
+    int n1 = a.size();
+    int n2 = b.size();
+    int i = 0;
+    int j = 0;
+    while(i < n1 && j<n2){
+        if(a[i] > b[j]){
+            if(temp.empty() || temp.back() != b[j]){
+                temp.push_back(b[j]);
+            }
+            j++;
+        }else if(a [i] < b[j] ){
+            if(temp.empty() || temp.back() != a[i]){
+                temp.push_back(a[i]);
+            }
+            i++;
+        }else{
+            if(temp.empty() || temp.back() != a[i]){
+                temp.push_back(a[i]);
+            }
+            i++;
+            j++;
+        }
+    }
+    
+    while(i < n1){
+        if( temp.empty() || temp.back() != a[i] ){
+            temp.push_back(a[i]);
+        }
+        i++;
+    }
+    
+    while(j < n2){
+        if (temp.empty() ||temp.back() != b[j]){
+            temp.push_back(b[j]);
+        }
+        j++;
+    }
+    return temp;
+}
+
+
+int main(){
+    vector <int> a = {1,2,3,4,5};
+    vector <int> b= {2,3,4,4,5};
+    vector <int> result = union_array(a,b);
+    
+    for(int i : result){
+        cout<<i<<" ";
+    }
+    return 0;
+}
 
