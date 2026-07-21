@@ -162,5 +162,32 @@ int main(){
     }
     return 0;
 }
+//---------using unordered set
+// the tc is O(n)
 
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main(){
+    int arr[] = {1,1,2,2,2,3,3};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    unordered_set <int> temp;
+    
+    for(int i = 0; i < n; i++){
+        temp.emplace(arr[i]);
+    }
+    int j = 0;
+    for(int i : temp){
+        arr[j] = i;
+        j++;
+    }
+    
+    for(int  n : arr){
+        cout<<n<<" ";
+    }
+    return 0;
+}
+
+//output 3 2 1 2 2 3 3 
 
