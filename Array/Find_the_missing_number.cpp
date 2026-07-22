@@ -67,3 +67,52 @@ int main(){
     cout<<result;
     return 0;
 }
+
+//-----------------------------we can also use the hashing function 
+//---------hashing , brute force method
+//------------------------------------------------small revision in the hashing
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int count_freq(int arr[],int n,int k){
+    int counter = 0;
+    for(int i = 0;i < n;i++){
+        if(arr[i] == k){
+            counter++;
+        }
+    }
+    
+    return counter;
+}
+int main(){
+    int arr[] ={10,5,10,15,10,5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int k = 10;
+    int result=count_freq(arr,n,k);
+    cout<<result;
+    return 0;
+}
+
+//using the hash map
+#include<bits/stdc++.h>
+using namespace std;
+
+int count_freq(int arr[],int n,int k){
+    unorder_map <int,int> mpp ;
+    
+    for(int i = 0 ; i < n;i++){
+        mpp[arr[i]] = mpp[arr[i]] + 1;
+    }
+    
+    return mpp[k];
+}
+
+int main(){
+    int arr[] = {10,5,10,4,10,15,4};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int k = 4;
+    int result = count_freq(arr,n,k);
+    cout<<result;
+    return 0;
+}
