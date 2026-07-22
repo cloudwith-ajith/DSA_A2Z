@@ -9,7 +9,7 @@ vector <int> intersation(vector <int> a, vector <int> b){
     int s2 = b.size();
     vector <int> temp;
     int vistor[s2] ={0};
-    
+       
     for(int i = 0; i < s1; i++){
         for(int j = 0 ;j < s2; j++){
             if(a[i] == b[j] && vistor[j] == 0){
