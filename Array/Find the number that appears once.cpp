@@ -25,7 +25,7 @@ int main(){
     return 0;
 }
 
-
+//tc is O(N)
 
 //-------optimal way
 #include<bits/stdc++.h>
