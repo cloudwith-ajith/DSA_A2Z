@@ -51,3 +51,5 @@ int main(){
 }
 
 //-----------tc is O(n)
+//------------space complexity
+//O(1)
