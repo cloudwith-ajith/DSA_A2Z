@@ -49,3 +49,5 @@ int main(){
     cout<<result;
     return 0;
 }
+
+//-----------tc is O(n)
