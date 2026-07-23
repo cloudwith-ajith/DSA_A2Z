@@ -14,7 +14,7 @@ int find_num(int arr[],int n){
             return arr[i];
         }
     }
-    return -1;
+    return -1;  
 }
 
 int main(){
