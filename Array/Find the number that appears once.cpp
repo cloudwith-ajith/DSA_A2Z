@@ -26,6 +26,7 @@ int main(){
 }
 
 //tc is O(N)
+//sc is O(n)
 
 //-------optimal way
 #include<bits/stdc++.h>
