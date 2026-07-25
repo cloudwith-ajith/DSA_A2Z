@@ -26,3 +26,5 @@ int main(){
     cout<< result;
     return 0;
 }
+
+// The time complexity is O(n)
