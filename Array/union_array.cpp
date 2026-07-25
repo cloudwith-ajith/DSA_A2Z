@@ -24,7 +24,7 @@ int main(){
     
     return 0;
 }
-
+ 
 //---------------optimal approach
 
 #include<bits/stdc++.h>
