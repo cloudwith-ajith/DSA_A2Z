@@ -28,3 +28,4 @@ int main(){
 }
 
 // The time complexity is O(n)
+// The space complexity is O(1)
