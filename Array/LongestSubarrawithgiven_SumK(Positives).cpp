@@ -9,7 +9,7 @@ int longest_subarray(int arr[],int n,int k){
         sum = sum + arr[i];
         //find the very first len of the k
         if (sum == k ){
-            max_len = i + 1;
+            max_len = i + 1;   
         }
         //find the key wheather present in the prefixmapp  
         if(prefix_mpp.find(sum - k) != prefix_mpp.end()){
