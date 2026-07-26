@@ -11,7 +11,7 @@ int longest_subarray(int arr[],int n,int k){
         if (sum == k ){
             max_len = i + 1;
         }
-        //find the key wheather present in the prefixmapp
+        //find the key wheather present in the prefixmapp  
         if(prefix_mpp.find(sum - k) != prefix_mpp.end()){
             max_len = max(max_len, i - prefix_mpp[sum-k]);
         }
