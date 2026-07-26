@@ -32,3 +32,40 @@ int main(){
     cout<<result;
     return 0;
 }
+
+//-------------------------only posttive with slidind window
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int longest_subarray_window(int arr[],int n ,int k){
+    int left = 0;
+    int max_len = 0;
+    int sum = 0;
+    //right pointer
+    for(int right = 0; right < n;right++){
+        sum = sum + arr[right];
+        //left remove when window up
+        while(left <= right && sum > k){
+            sum = sum - arr[left];
+            left++;
+        }
+        //check the sum is equal to k 
+        if(sum == k){
+            max_len = max(max_len,right-left +1);
+        }
+    }
+    
+    return max_len;
+}
+
+int main(){
+    int arr[] = {10, 5, 2, 7, 1, 9};
+    int k = 15;
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int result = longest_subarray_window(arr,n,k);
+    cout<<result;
+    return 0;
+}
+
+//----- space complexity ----O(1)
