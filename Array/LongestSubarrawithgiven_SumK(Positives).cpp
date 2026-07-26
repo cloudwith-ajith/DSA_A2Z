@@ -32,6 +32,7 @@ int main(){
     cout<<result;
     return 0;
 }
+// space somplexity is O(n) bcz of the hashmap
 
 //-------------------------only posttive with slidind window
 
