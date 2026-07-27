@@ -175,3 +175,33 @@ int main(){
     cout<<result;
     return 0;
 }
+
+///------using hashing (better method)
+#include<bits/stdc++.h>
+using namespace std;
+
+int find_number_once(int arr[],int n){
+    unordered_map <int ,int > mpp;
+    
+    for(int i = 0 ; i < n; i ++){
+        mpp[arr[i]]++;
+    }
+    
+    for(int j = 0; j < n; j++){
+        if(mpp[arr[j]] == 1){
+            return arr[j];
+        }
+    }
+    return -1;
+}
+
+int main(){
+    int arr[] = {4,1,2,1,2};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int result = find_number_once(arr,n);
+    cout<<result;
+    return 0;
+}
+
+//---TC O(N)
+//---SC O(N)
