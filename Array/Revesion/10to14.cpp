@@ -144,3 +144,34 @@ int main(){
     cout<<result;
     return 0;
 }
+
+//--------------------------find the number one occurence 
+//-------------------------Tc O(n*@)
+//-------------------------SC O(1)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int find_number_once(int arr[],int n){
+    for(int i = 0; i < n; i++){
+        int count = 0;
+        for(int j = 0; j < n; j++){
+            if(arr[j] == arr[i]){
+                count++;
+            }
+        }
+        
+        if(count == 1){
+            return i;
+        }
+    }
+    return -1;
+}
+
+int main(){
+    int arr[] = {4,1,2,1,2};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int result = find_number_once(arr,n);
+    cout<<result;
+    return 0;
+}
