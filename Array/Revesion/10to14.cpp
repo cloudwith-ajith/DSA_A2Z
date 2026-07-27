@@ -56,3 +56,32 @@ int main(){
     cout<<result;
     return 0;
 }
+
+//----------------OPTIMAL 1
+///----------------------------sum of natural numbers
+//-------------------n(n+1) / 2
+//----------TC O(N)
+//-----------SP O(1)
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int missing_number(int arr[],int n ){
+    int total_sum = ((n+1)* ((n+1) + 1)) / 2;
+    int sum  = 0;
+    for(int i = 0; i < n; i++){
+        sum = sum + arr[i];
+    }
+    
+    int missing =  total_sum - sum;
+    return missing;
+}
+
+int main(){
+    int arr[] = {8, 2, 4, 5, 3, 7, 1};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int result = missing_number(arr,n);
+    cout<<result;
+    return 0;
+}
