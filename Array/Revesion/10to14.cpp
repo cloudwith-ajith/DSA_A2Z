@@ -111,3 +111,36 @@ int main(){
     cout<<result;
     return 0;
 }
+
+//-------------count the maximum ones in the array
+// optimal  TC----> O(n)
+// SC ----> o(1)
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int count_max_ones(int arr[],int n){
+    int max_count = 0;
+    int count = 0;
+    
+    for(int i = 0 ; i < n; i++){
+        if(arr[i] == 1){
+            count = count + 1;
+            max_count = max(max_count,count);
+        }else{
+            count = 0;
+        }
+    }
+    
+    return max_count;
+}
+
+
+int main(){
+    int arr[] = {1,1,0,1,1,1};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int result = count_max_ones(arr,n);
+    cout<<result;
+    return 0;
+}
