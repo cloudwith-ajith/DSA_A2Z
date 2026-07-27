@@ -24,3 +24,5 @@ int main(){
     cout<<result;
     return 0;
 }
+// THH TIME COMPLEXITY OF THE CODE IS O(N*2)
+// THE SPACE COMPLEXITY OF THE CODE IS O(1)
