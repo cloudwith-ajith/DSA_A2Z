@@ -26,3 +26,33 @@ int main(){
 }
 // THH TIME COMPLEXITY OF THE CODE IS O(N*2)
 // THE SPACE COMPLEXITY OF THE CODE IS O(1)
+
+//----------------------hashing
+// TC O(N)
+// SC O(N)
+#include<bits/stdc++.h>
+using namespace std;
+
+int missing_number(int arr[],int n ){
+    vector <int> temp(n+2);
+    
+    for(int i = 0; i < n; i++){
+        temp[arr[i]]++;
+    }
+    
+    for(int j = 1; j <= n+1; j++){
+        if(temp[j] == 0){
+            return j;
+        }
+    }
+    
+    return -1;
+}
+
+int main(){
+    int arr[] = {8, 2, 4, 5, 3, 7, 1};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int result = missing_number(arr,n);
+    cout<<result;
+    return 0;
+}
