@@ -205,3 +205,28 @@ int main(){
 
 //---TC O(N)
 //---SC O(N)
+
+
+///---------------optimal way using xor
+#include<bits/stdc++.h>
+using namespace std;
+
+int find_number_once(int arr[],int n){
+    int x = 0;
+    for(int i = 0; i < n;i++){
+        x = x ^ arr[i];
+    }
+    
+    return x;
+}
+
+int main(){
+    int arr[] = {4,1,2,1,2};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int result = find_number_once(arr,n);
+    cout<<result;
+    return 0;
+}
+
+//----tc o(n)
+// sp ---O(1)
