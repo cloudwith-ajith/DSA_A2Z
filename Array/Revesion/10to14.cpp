@@ -261,3 +261,6 @@ int main(){
     cout<<result;
     return 0;
 }
+
+//-----tc O(n)
+// sc ----O(1)
