@@ -230,3 +230,34 @@ int main(){
 
 //----tc o(n)
 // sp ---O(1)
+
+
+//----------------------------largest sum in the subarray
+// largest subarray with element of k 
+#include<bits/stdc++.h>
+using namespace std;
+
+int largest_subarray(int arr[],int k,int n){
+    int sum = 0;
+    for(int i = 0; i < k; i++){
+        sum = sum + arr[i];
+    }
+    
+    int max_count = sum;
+    for(int j = k ; j < n; j++){
+        sum = sum - arr[j - k];
+        sum = sum + arr[j];
+        max_count = max(max_count,sum);
+    }
+    
+    return max_count;
+}
+
+int main(){
+    int arr[] = {2,6,10,1,8,3};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int k = 3;
+    int result = largest_subarray(arr,k,n);
+    cout<<result;
+    return 0;
+}
