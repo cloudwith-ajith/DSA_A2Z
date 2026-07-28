@@ -264,3 +264,40 @@ int main(){
 
 //-----tc O(n)
 // sc ----O(1)
+
+//------------------------leagest subarray with k
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int largest_sum_subarray(int arr[],int n, int k){
+    int sums = 0;
+    int left = 0;
+    int max_len = 0;
+    
+    for(int right = 0; right < n; right++){
+        sums = sums + arr[right];
+        
+        //while the window is large that k shrinking the window
+        while(sums > k && left <= right){
+            sums = sums - arr[left];
+            left++;
+        }
+        // if sums is = than max_len update
+        if(sums == k){
+            max_len = max(max_len, ((right - left) + 1));
+        }
+    }
+    return max_len;
+}
+
+int main(){
+    int arr[] ={10,5,2,7,1,9};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int k = 15;
+    int result = largest_sum_subarray(arr,n,k);
+    cout<<result;
+    return 0;
+}
+
+//----
