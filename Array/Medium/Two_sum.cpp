@@ -64,3 +64,34 @@ int main(){
 
 //--------------------better version with prefix sum and the hashmap
 //----------------------target - cuurent values, search in the map
+
+//--------------------beter version using the prefix and the hash map 
+#include<bits/stdc++.h>
+using namespace std;
+
+vector <int> two_sum(int arr[],int n,int target){
+    unordered_map <int,int> mpp;
+    for(int i = 0 ; i < n; i++){
+        int a = target - arr[i];
+        
+        if(mpp.find(a) != mpp.end()){
+            return {mpp[a],i};
+        }
+        
+        if(mpp.find(a) == mpp.end()){
+            mpp[arr[i]] = i;
+        }
+    }
+    
+    return {-1,-1};
+}
+
+int main(){
+    int arr[] = {2,6,5,8,11};
+    int target = 14;
+    int n = sizeof(arr)/sizeof(arr[0]);
+    vector <int> result = two_sum(arr,n,target);
+    cout<<result[0]<<" "<<result[1];
+    return 0;
+}
+
