@@ -94,4 +94,6 @@ int main(){
     cout<<result[0]<<" "<<result[1];
     return 0;
 }
+//-----Time  complexity is O(n)
+//-----space complexity is O(n)
 
