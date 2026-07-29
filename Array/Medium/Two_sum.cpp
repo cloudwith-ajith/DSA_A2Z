@@ -60,3 +60,4 @@ int main(){
     return 0;
 }
 
+//same TC AND SC
