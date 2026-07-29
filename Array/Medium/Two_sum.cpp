@@ -31,3 +31,4 @@ int main(){
     return 0;
 }
 ///-------------Time complexity O(2*n)
+///--------------Space complexity O(1)
