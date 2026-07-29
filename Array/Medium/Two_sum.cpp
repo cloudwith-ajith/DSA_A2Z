@@ -61,3 +61,6 @@ int main(){
 }
 
 //same TC AND SC
+
+//--------------------better version with prefix sum and the hashmap
+//----------------------target - cuurent values, search in the map
