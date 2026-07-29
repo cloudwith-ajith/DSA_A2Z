@@ -97,3 +97,39 @@ int main(){
 //-----Time  complexity is O(n)
 //-----space complexity is O(n)
 
+//---------------------optimal way using the two pointer
+#include<bits/stdc++.h>
+using namespace std;
+
+string two_sum(vector<int> arr,int target){
+    int left = 0;
+    int right = arr.size()-1;
+    //sort the array 
+    sort(arr.begin(),arr.end());
+    //loop left < right 
+    while(left < right){
+        // sum the element 
+        int sums = arr[left] + arr[right];
+        //if the target is greater than the sum add the left part which is smaller
+        if(target >  sums){
+            left++;
+        }
+        if(target < sums){
+            right--;
+        }
+        if(target == sums){
+            return "yes";
+        }
+    }
+    
+    return "no";
+}
+
+
+int main(){
+    vector <int> arr = {2,6,5,8,11};
+    int target = 14;
+    string result = two_sum(arr,target);
+    cout<<result;
+    return 0;
+}
