@@ -107,7 +107,6 @@ int main(){
     }
     return 0;
 }
-
 // tc is exact O(n)
 // sc is O(1) not extra space used 
 
