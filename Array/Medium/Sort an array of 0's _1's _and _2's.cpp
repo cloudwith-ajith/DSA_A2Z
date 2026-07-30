@@ -71,3 +71,43 @@ int main(){
 
 // no extra space O(1)
 // tc is O(n) but not exact O(n)
+
+
+//--------------------optimal way to right the code for this problem 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void sort_sort(int arr[],int n ){
+    int left = 0;
+    int mid = 0;
+    int right = n-1;
+    
+    while(mid <= right){
+        if(arr[mid] == 0){
+            swap(arr[left],arr[mid]);
+            left++;
+            mid++;
+        }
+        else if (arr[mid] == 1){
+            mid++;
+        }else{
+            swap(arr[mid],arr[right]);
+            right--;
+        }
+    }
+}
+
+int main(){
+    int arr[] = {1,0,2,1,0};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    sort_sort(arr,n);
+    for(int i : arr){
+        cout<<i<<" ";
+    }
+    return 0;
+}
+
+// tc is exact O(n)
+// sc is O(1) not extra space used 
+
