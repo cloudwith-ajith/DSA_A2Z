@@ -104,4 +104,5 @@ int main(){
     return 0;
 }
 
-
+//----------Timecomplexity O(n)
+//----------Space complexity O(1)
