@@ -61,3 +61,47 @@ int main(){
 //     return -1; // Or any default value meaning "no majority element exists"
 // }
 // Use code with caution.You solved a harder, more general problem on your first try. 
+
+//That is excellent progress for any programmer!
+
+//-------------------------optimal 
+#include<bits/stdc++.h>
+using namespace std;
+
+int majority(int arr[],int n){
+    int ele = 0;
+    int count = 0;
+    for(int i = 0 ; i < n ; i++){
+        if(count == 0){
+            count = 1;
+            ele = arr[i];
+        }else if(ele == arr[i]){
+            count++;
+        }else{
+            count--;
+        }
+    }
+    //check the number 
+    int cmt = 0;
+    for(int i = 0 ; i < n; i++){
+        if(arr[i] == ele){
+            cmt++;
+        }
+    }
+    //check the n/2
+    if(cmt > (n/2)){
+        return ele;
+    }
+    
+    return -1;
+}
+
+int main(){
+    int arr[] = {1,3,3,1,3,3,3,2};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int result  = majority(arr,n);
+    cout<<result;
+    return 0;
+}
+
+
