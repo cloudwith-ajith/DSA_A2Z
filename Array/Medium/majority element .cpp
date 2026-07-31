@@ -39,3 +39,5 @@ int main(){
     cout<<result;
     return 0;
 }
+//------------Time complexity O(3n)
+//------------Space complexityO(n)
