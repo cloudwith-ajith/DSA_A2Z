@@ -1,6 +1,6 @@
 //Sort an array of 0's 1's and 2's
 //tried by me , to realiable and not best fit for the timecomplexity 
-#include<bits/stdc++.h>
+#include<bits/stdc++.h>    
 using namespace std;
 
 void sort_sort(int arr[],int n){
