@@ -7,7 +7,7 @@ void sort_sort(int arr[],int n){
     // create the temp array
     vector <int> temp;
     // first loop for the 0 to 2 element   
-    for(int i = 0 ; i < 3; i++){
+    for(int i = 0 ; i < 3; i++){    
         // for the element present in the array 
         for(int j = 0 ; j < n; j++){
             // if the element present push to temp array 
