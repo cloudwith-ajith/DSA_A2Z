@@ -5,7 +5,7 @@ using namespace std;
 
 void sort_sort(int arr[],int n){
     // create the temp array
-    vector <int> temp;  
+    vector <int> temp;    
     // first loop for the 0 to 2 element   
     for(int i = 0 ; i < 3; i++){    
         // for the element present in the array 
