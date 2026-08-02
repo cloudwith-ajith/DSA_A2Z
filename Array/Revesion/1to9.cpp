@@ -194,7 +194,7 @@ int main(){
 //----------------brute force for the one rotate
 #include<bits/stdc++.h>
 using namespace std;
-
+                    
 void rotate(int arr[],int n){
     vector <int> temp(n);
     for(int i = 1; i < n; i++){
