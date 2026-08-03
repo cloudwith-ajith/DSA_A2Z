@@ -15,7 +15,7 @@ bool two_sum(int arr[],int n,int target){
     
     return false;
     
-}
+}   
 
 int main(){
     int arr[] = {2,6,5,8,11};
