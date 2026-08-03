@@ -18,7 +18,7 @@ bool two_sum(int arr[],int n,int target){
 }   
 
 int main(){
-    int arr[] = {2,6,5,8,11};
+    int arr[] = {2,6,5,8,11};   
     int n  = sizeof(arr)/sizeof(arr[0]);
     int target = 14;
     bool result = two_sum(arr,n,target);
