@@ -132,3 +132,6 @@ int main(){
     cout<<result;
     return 0;
 }
+
+/// time complexity O(2n)
+// space complexity O(1)
