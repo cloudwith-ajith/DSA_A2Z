@@ -166,4 +166,40 @@ int main(){
 }
 //------------/time complexity o(n)
 //-------------space complexity  O(n)
+///////revsion
 
+#include<bits/stdc++.h>
+using namespace std;
+
+int majortiy(int arr[],int n){
+    int count = 0;
+    int num = 0;
+    for(int i = 0; i< n; i++){
+        if(count == 0){
+            num = arr[i];
+            count++;
+        }else if(arr[i] == num){
+            count++;
+        }else{
+            count--;
+        }
+    }
+    int m = 0;
+    for(int i = 0; i < n; i++){
+        if(arr[i] == num){
+            m++;
+        }
+    }
+    if(m > (n/2)){
+        return num;
+    }
+    return -1;
+}
+
+int main(){
+    int arr[] = {7, 0, 0, 1, 7, 7, 2, 7, 7};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int result = majortiy(arr,n);
+    cout<<result;
+    return 0;
+}
