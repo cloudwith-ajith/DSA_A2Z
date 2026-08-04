@@ -63,6 +63,9 @@ int main(){
 // Use code with caution.You solved a harder, more general problem on your first try. 
 
 //That is excellent progress for any programmer!
+// ///----------------------optimal 
+// Optimal Time Complexity: O(n) because you only traverse the array twice.
+// Optimal Space Complexity: O(1) since you only use a few integer variables (count, num, m).
 
 //-------------------------optimal 
 #include<bits/stdc++.h>
