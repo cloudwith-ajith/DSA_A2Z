@@ -106,3 +106,29 @@ int main(){
 
 //----------Timecomplexity O(n)
 //----------Space complexity O(1)
+//--------------------------------------------brute force method -------------------
+#include<bits/stdc++.h>
+using namespace std;
+
+int majortiy(int arr[],int n){
+    for(int i = 0 ;  i < n; i++){
+        int max_occ = 0;
+        for(int j = 0; j < n; j++){
+            if(arr[j] == arr[i]){
+                max_occ++;
+            }
+        }
+        if(max_occ > (n/2)){
+            return arr[i];
+        }
+    }
+    return -1;
+}
+
+int main(){
+    int arr[] = {7, 0, 0, 1, 7, 7, 2, 7, 7};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int result = majortiy(arr,n);
+    cout<<result;
+    return 0;
+}
