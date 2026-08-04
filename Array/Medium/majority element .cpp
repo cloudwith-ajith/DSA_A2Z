@@ -135,3 +135,32 @@ int main(){
 
 /// time complexity O(2n)
 // space complexity O(1)
+
+///-----------------------better way to find the majortiy
+#include<bits/stdc++.h>
+using namespace std;
+
+int majortiy(int arr[],int n){
+    unordered_map <int, int> mpp;
+    for(int i = 0; i < n; i++){
+        mpp[arr[i]]++;
+    }
+    for(auto x : mpp){
+        if(x.second > (n/2)){
+            return x.first;
+        }
+    }
+    
+    return -1;
+}
+
+int main(){
+    int arr[] = {7, 0, 0, 1, 7, 7, 2, 7, 7};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int result = majortiy(arr,n);
+    cout<<result;
+    return 0;
+}
+//------------/time complexity o(n)
+//-------------space complexity  O(n)
+
