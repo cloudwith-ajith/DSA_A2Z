@@ -11,7 +11,7 @@ int majority(vector <int> arr){
     //find the unique element 
     for(int i = 0 ; i < arr.size(); i++){
         if(unique.empty() || arr[i] != unique.back() ){
-            unique.push_back(arr[i]);
+            unique.push_back(arr[i]);   
         }
     }
     
