@@ -202,4 +202,4 @@ int main(){
     int result = majortiy(arr,n);
     cout<<result;
     return 0;
-}
+}   
