@@ -2,7 +2,7 @@
 //-------------I tried with my way 
 #include<bits/stdc++.h>
 using namespace std;
-
+   
 int majority(vector <int> arr){
     //sort the array to find the unique element
     sort(arr.begin(),arr.end());
