@@ -16,7 +16,7 @@ int majority(vector <int> arr){
     }
     
     // count the majority element
-    int element = 0;
+    int element = 0;   
     int max_count = 0;
     for(int i = 0; i < unique.size();i++){
         int count = 0 ;
