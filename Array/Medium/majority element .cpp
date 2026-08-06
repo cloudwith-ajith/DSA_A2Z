@@ -6,7 +6,7 @@ using namespace std;
 int majority(vector <int> arr){
     //sort the array to find the unique element
     sort(arr.begin(),arr.end());
-    // create the temp array to store the unique element
+    // create the temp array to store the unique element  
     vector <int> unique;
     //find the unique element 
     for(int i = 0 ; i < arr.size(); i++){
