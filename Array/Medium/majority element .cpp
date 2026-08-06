@@ -1,7 +1,7 @@
 //majority element in the array which mean n/2 
 //-------------I tried with my way 
 #include<bits/stdc++.h>
-using namespace std;
+using namespace std;   
    
 int majority(vector <int> arr){
     //sort the array to find the unique element
