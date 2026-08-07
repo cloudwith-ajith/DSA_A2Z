@@ -86,7 +86,7 @@ void sort_sort(int arr[],int n ){
         if(arr[mid] == 0){
             swap(arr[left],arr[mid]);
             left++;
-            mid++;
+            mid++;    
         }
         else if (arr[mid] == 1){
             mid++;
