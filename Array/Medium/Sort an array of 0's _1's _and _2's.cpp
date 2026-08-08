@@ -17,7 +17,7 @@ void sort_sort(int arr[],int n){
     }
     //copy back the temp to original array 
 
-    for(int i = 0; i < n; i++){
+    for(int i = 0; i < n; i++){   
         arr[i] = temp[i];
     }
 }
