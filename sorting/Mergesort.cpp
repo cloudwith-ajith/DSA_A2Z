@@ -4,7 +4,7 @@
 using namespace std;
 
 void merge(int arr[],int low,int mid,int high){
-    vector <int> temp;   
+    vector <int> temp;     
     int left = low;   
     int right = mid+1;
     
