@@ -196,6 +196,49 @@ int main(){
     return 0;
 }
 
+//------------------------------optimal way
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int majority(int arr[],int n){
+    int counter = 0;
+    int candiate = 0;
+    for(int i = 0 ; i < n ; i++){
+        if(counter == 0 ){
+            candiate = arr[i];
+            counter++;
+        }else if(candiate == arr[i]){
+            counter++;
+        }else{
+            counter--;
+        }
+    }
+    //checking the counter
+    int check_counter = 0 ;
+    for(int i = 0 ; i < n; i++){
+        if(arr[i] == candiate){
+            check_counter++;
+        }
+    }
+    
+    if(check_counter > (n/2)){
+        return candiate;
+    }
+
+    return -1;
+}
+
+
+int main(){
+    int arr[] = {7,0,0,1,7,7,2,7,7};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int res = majority(arr,n);
+    cout<<res;
+    return 0;
+}
+
+
 
 
 
