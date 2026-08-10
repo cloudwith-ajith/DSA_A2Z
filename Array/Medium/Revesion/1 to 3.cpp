@@ -140,3 +140,63 @@ int main(){
 
 
 
+///------------------majority
+
+//----burte force method
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int majority(int arr[],int n){
+    for(int i = 0; i < n; i++){
+        int num_count = 0;
+        for(int j = 0; j < n; j++){
+            if(arr[i] == arr[j]){
+                num_count++;
+            }
+        }
+        if(num_count > (n/2)){
+            return arr[i];
+        }
+    }
+    return -1;
+}
+
+
+int main(){
+    int arr[] = {7,0,0,1,7,7,2,7,7};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int res = majority(arr,n);
+    cout<<res;
+    return 0;
+}
+//------------------better method
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int majority(int arr[],int n){
+    unordered_map <int,int> mpp;
+    for(int i = 0; i < n; i++){
+        mpp[arr[i]]++;
+    }
+    for(auto i : mpp ){
+        if(i.second > (n/2)){
+            return i.first;
+        }
+    }
+    return -1;
+}
+
+int main(){
+    int arr[] = {7,0,0,1,7,7,2,7,7};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int res = majority(arr,n);
+    cout<<res;
+    return 0;
+}
+
+
+
+
+
