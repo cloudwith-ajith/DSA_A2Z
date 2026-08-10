@@ -8,7 +8,7 @@ string two_sum(vector<int>arr,int target){
     int n = arr.size();
     for(int i = 0 ; i < n; i++){
         int sum = 0 ;
-        for(int j = i+1 ; j < n; j++){
+        for(int j = i+1 ; j < n; j++){ 
             sum = arr[i] + arr[j];
             if(sum == target){
                 return "yes";
