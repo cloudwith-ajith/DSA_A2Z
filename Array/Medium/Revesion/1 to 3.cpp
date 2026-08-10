@@ -239,6 +239,34 @@ int main(){
 }
 
 
+//--------------------kadane algo 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int kadane(int arr[],int n){
+    int sum = 0;
+    int max_sum = INT_MIN;
+    for(int i = 0 ; i < n ; i++){
+        sum = sum + arr[i];
+        max_sum = max(max_sum,sum);
+        //zero defined
+        if(sum < 0){
+            sum = 0;
+        }
+    }
+    return max_sum;
+}
+
+int main(){
+    int arr[] = {2, 3, 5, -2, 7, -4};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int res = kadane(arr,n);
+    cout<<res;
+    return 0;
+}
+
+
 
 
 
