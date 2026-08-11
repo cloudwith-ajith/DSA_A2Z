@@ -59,3 +59,36 @@ int main(){
 }
 //the time complexity od the solution O(n)
 //the space complexityof the solution O(1)
+
+
+//--------optimal with two pointers 
+#include<bits/stdc++.h>
+using namespace std;
+
+int stock(int arr[],int n ){
+    int left = 0;
+    int right = 1;
+    int profit = 0;
+    while(right < n){
+        if(arr[left] < arr[right]){
+            profit = max(profit,arr[right]- arr[left]);
+        }else{
+            // if the right element is small then the left element 
+            // then the smallest element is right so need to assign to the left 
+            left = right;
+        }
+        //alway right need to be move 
+        right++;
+    }
+    return profit;
+}
+
+int main(){
+    int arr[] = {7,1,5,3,6,4};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int result = stock(arr,n);
+    cout<< result;
+    return 0;
+}
+
+//------the time complexity is O(n) and the time complexity is O(1)
