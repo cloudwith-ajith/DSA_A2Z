@@ -43,4 +43,5 @@ int main(){
     }
     return 0;
 }
-
+// tc is O(n)
+// sc is O(n)
