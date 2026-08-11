@@ -12,7 +12,7 @@ int max_element(int arr[],int n){
         }
     }
     return arr[max];
-}
+} 
 
 int main(){
     int arr[5] ={2,5,1,3,0};
