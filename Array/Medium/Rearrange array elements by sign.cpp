@@ -43,5 +43,42 @@ int main(){
     }
     return 0;
 }
-// tc is O(n)
-// sc is O(n)
+//----------optimal way
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+vector<int>Rearrange(int arr[],int n){
+    vector <int> temp(n,0);
+
+    int posindex = 0;
+    int negindex = 1;
+
+    for(int i = 0; i < n ;i++){
+        if(arr[i] > 0){
+            temp[posindex] = arr[i];
+            posindex += 2;
+        }else{
+            temp[negindex] = arr[i];
+            negindex +=2;
+        }
+    }
+
+    return temp;
+    
+}
+
+
+int main(){
+    int arr[] = {1, 2, -4, -5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    vector <int> result =  Rearrange(arr,n);
+    for(auto i : result){
+        cout<<i<<" ";
+    }
+    return 0;
+}
+
+// the time complexity of the solution is O(n)
+// the space complexity of the solution is o(n)
