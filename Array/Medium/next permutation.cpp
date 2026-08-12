@@ -99,3 +99,6 @@ int main(){
     }
     return 0;
 }
+
+//----- the time complexity of the solution is O(n)
+//----- the space complexity of the solution of the solution is O(1)
