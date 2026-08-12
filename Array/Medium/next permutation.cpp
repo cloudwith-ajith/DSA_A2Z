@@ -102,3 +102,52 @@ int main(){
 
 //----- the time complexity of the solution is O(n)
 //----- the space complexity of the solution of the solution is O(1)
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//////------------------previous permutation-----------//
+//---simple do all opposite the algo 
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void prev_permutation_custom(vector<int> &arr) {
+    int n = arr.size();
+    int pivot = -1;
+
+    // Step 1: Find the first element breaking the ascending order from right
+    for (int i = n - 2; i >= 0; i--) {
+        if (arr[i] > arr[i + 1]) {
+            pivot = i;
+            break;
+        }
+    }
+
+    // Step 2: If no pivot found, reverse the entire array
+    if (pivot == -1) {
+        reverse(arr.begin(), arr.end());
+        return;
+    }
+
+    // Step 3: Find the largest element to the right of pivot that is smaller than arr[pivot]
+    for (int i = n - 1; i > pivot; i--) {
+        if (arr[i] < arr[pivot]) {
+            swap(arr[i], arr[pivot]);
+            break;
+        }
+    }
+
+    // Step 4: Reverse the suffix to make it lexicographically largest
+    reverse(arr.begin() + pivot + 1, arr.end());
+}
+
+int main() {
+    vector<int> arr = {1, 3, 2};
+    prev_permutation_custom(arr);
+    
+    for (int i : arr) {
+        cout << i << " ";
+    }
+    // Output: 1 2 3
+    return 0;
+}
