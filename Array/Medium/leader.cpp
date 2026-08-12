@@ -90,4 +90,39 @@ int main() {
     return 0;
 }
 
+///---------optimal way
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+vector <int> leader(vector <int> arr){
+    int n = arr.size();
+    if(n == 0 ){
+        return arr;
+    }
+    vector <int> temp;
+    int max_element = arr[n-1];
+    temp.push_back(arr[n-1]);
+    //loop to find the leader
+    for(int i = n -2; i >= 0; i--){
+        if(arr[i] >= max_element){
+            temp.push_back(arr[i]);
+            max_element = arr[i];
+        }
+    }
+
+    reverse(temp.begin(),temp.end());
+    return temp;
+}
+
+
+int main(){
+    vector <int> arr = {10, 22, 12, 3, 0, 6};
+    vector <int> result =  leader(arr);
+    for(int i : result){
+        cout<<i<<" ";
+    }
+    return 0;
+}
 
