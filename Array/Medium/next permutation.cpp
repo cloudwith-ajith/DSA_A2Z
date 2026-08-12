@@ -49,3 +49,53 @@ int main(){
     }
     return 0;
 }
+
+
+//---optimal and the Narayana Pandita's Algorithm/ next permutation algo 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+void nxt_permutation(vector<int> &arr){
+    //create the pivot that used to find the first smallest element than the right one 
+    int pivot = -1;
+    //size of the vector
+    int n =  arr.size();
+    //getting the pivot
+    for(int i = n-2; i >= 0; i--){
+        if(arr[i] < arr[i+1]){
+            pivot = i;
+            break;
+        }
+    }
+
+    //if the pivot is still -1 or it is the last permutation of the number 
+    // so just reverse the number and return 
+    if(pivot == -1){
+        reverse(arr.begin(),arr.end());
+        return ;
+    }
+    //finding the first largest element thatn the pivot 
+    //and swap with the pivot 
+    for(int i  = n -1; i >= 0 ; i--){
+        if(arr[i] > arr[pivot]){
+            swap(arr[i],arr[pivot]);
+            break;
+        }
+    }
+    //after swap if you see the element right after the pivot all in the descending order
+    // try to reverse the number 
+    reverse(arr.begin()+pivot+1,arr.end());
+}
+
+
+
+int main(){
+    vector <int> arr = {1,3,2};
+    nxt_permutation(arr);
+    for(int i : arr){
+        cout<<i<<" ";
+    }
+    return 0;
+}
