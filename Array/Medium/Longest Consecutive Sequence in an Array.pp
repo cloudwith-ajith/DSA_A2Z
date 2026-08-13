@@ -1,6 +1,6 @@
 //----------------brute force method 
 #include<bits/stdc++.h>
-using namespace std;
+using namespace std;   
 
 
 //helper function 
