@@ -73,3 +73,49 @@ int main(){
     cout << result; // Outputs 4
     return 0;
 }
+
+/-----optimal solution 
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int consective(vector <int>arr){
+    //createthe set to put all the element in the array
+    unordered_set <int> st(arr.begin(),arr.end());
+    int n = arr.size();
+
+    int max_counter = 0;
+    for(int i = 0; i < n; i++){
+        int counter = 0;
+        int num =  arr[i];
+        //find the element should start from the sequence
+        if(st.find(num-1) == st.end()){
+            counter = 1;
+
+            while(st.find(num+1) != st.end()){
+                counter++;
+                num++;
+            }
+
+            max_counter = max(max_counter,counter);
+        }
+    }
+
+    return max_counter;
+} 
+
+
+
+
+int main(){
+    vector <int> arr = {100, 4, 200, 1, 3, 2};
+    int result = consective(arr);
+    cout<<result;
+    return 0;
+}
+
+// the time complexity is O(n)
+//-----space complexity is O(n)
+
+
