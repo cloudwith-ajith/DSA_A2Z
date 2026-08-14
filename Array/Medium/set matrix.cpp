@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
 void set_matrix(vector<vector<int>> &arr){
     int n = arr.size();
     int m = arr[0].size();
