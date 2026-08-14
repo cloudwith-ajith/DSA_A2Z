@@ -46,7 +46,7 @@ int main(){
     return 0;
 }
   
-///----------------------- the better solution for the problem 
+///----------------------- the better solution for the problem   
 
 #include<bits/stdc++.h>
 using namespace std;
