@@ -77,7 +77,6 @@ void set_matrix(vector<vector<int>> &arr){
 }
 
 
-
 int main(){
     vector<vector<int>> arr = {{1,1,1},{1,0,1},{1,1,1}};
     set_matrix(arr);
