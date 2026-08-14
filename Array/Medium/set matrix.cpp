@@ -4,7 +4,7 @@ using namespace std;
 void set_matrix(vector<vector<int>> &arr){
     int n = arr.size();
     int m = arr[0].size();
-
+  
     for(int i = 0; i < n; i++){
         for(int j = 0; j < m; j++){
             if(arr[i][j] == 0){
