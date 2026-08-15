@@ -86,7 +86,7 @@ int main(){
   
 ///----------------------- the better solution for the problem   
 
-#include<bits/stdc++.h>
+#include<bits/stdc++.h> 
 using namespace std;
 
 void set_matrix(vector<vector<int>> &arr){
