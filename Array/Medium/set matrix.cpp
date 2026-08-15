@@ -153,3 +153,70 @@ int main(){
     }
     return 0;
 }
+//-------------------------optimal
+#include<bits/stdc++.h>
+using namespace std;
+
+void set_matrix(vector<vector<int>> &arr){
+    //row
+    int n = arr.size();
+    //colum
+    int m = arr[0].size();
+    int firstcol = false;
+    int firstrow= false;
+
+    for(int i = 0; i < n; i++){
+        if(arr[i][0] == 0){
+            firstcol = true;
+        }
+    }
+
+    for(int j = 0; j < m; j++){
+        if(arr[0][j] == 0){
+            firstrow = true;
+        }
+    }
+
+    for(int i = 1; i < n; i++){
+        for(int j =1; j < m; j++){
+            if(arr[i][j] == 0){
+                arr[i][0] = 0;
+                arr[0][j] = 0; 
+            }
+        }
+    }
+
+    for(int i =1; i < n; i++){
+        for(int j = 1; j < m; j++){
+            if(arr[i][0] == 0 || arr[0][j] == 0 ){
+                arr[i][j] = 0;
+            }
+        }
+    }
+
+    if(firstrow){
+        for(int j = 0; j < m; j++){
+            arr[0][j] = 0;
+        }
+    }
+
+    if(firstcol){
+        for(int i = 0; i < n; i++){
+            arr[i][0] = 0;
+        }
+    }
+}
+
+
+
+
+int main(){
+    vector <vector<int>> arr = {{1,1,1,1},{1,1,0,1},{0,1,1,1},{1,0,1,1}};
+    set_matrix(arr);
+    for(auto i : arr){
+        for(auto j : i){
+            cout<<j<<" ";
+        }cout<<endl;
+    }
+    return 0;
+}
