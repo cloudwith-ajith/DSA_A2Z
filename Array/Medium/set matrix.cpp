@@ -90,7 +90,9 @@ int main(){
 
 // Time Complexity: O(n*m)
 // Space Complexity: O(n+m)
-
+///--------------------------------optimal way 
+// Time Complexity: O(n*m)2
+// Space Complexity: O(1)
 #include<bits/stdc++.h>
 using namespace std;
 
