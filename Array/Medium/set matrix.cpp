@@ -5,7 +5,7 @@
        0   1   2   3
      ┌───────────────
 ROW 0│
-     1
+     1 
      2
      3
 // The first number chooses the vertical position → row.
