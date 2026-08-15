@@ -1,3 +1,5 @@
+// Whenever you see a matrix, imagine:
+
           COLUMN
        ↓
        0   1   2   3
@@ -6,10 +8,29 @@ ROW 0│
      1
      2
      3
+// The first number chooses the vertical position → row.
+
+// The second number chooses the horizontal position → column.
+
+arr[i][j]
+    │ │
+    │ └── column
+    └──── row
+
+arr[i][0]
+    │ │
+    │ └── column 0 → FIRST COLUMN
+    └──── any row
+
+arr[0][j]
+    │ │
+    │ └── any column
+    └──── row 0 → FIRST ROW
 
 
-
-
+arr[i][0] → COLUMN 0
+arr[0][j] → ROW 0
+//-------------------------------- Thinks to remeber
 
 
 
