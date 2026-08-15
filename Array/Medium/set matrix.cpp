@@ -15,7 +15,7 @@ ROW 0│
 arr[i][j]
     │ │
     │ └── column
-    └──── row
+    └──── row    
 
 arr[i][0]
     │ │
