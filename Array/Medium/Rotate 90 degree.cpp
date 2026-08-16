@@ -29,7 +29,7 @@ int main(){
 
 
 ///--------------ooptimal way to write the code 
-
+ 
 
 #include<bits/stdc++.h>
 using namespace std;
