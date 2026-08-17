@@ -16,7 +16,7 @@ int longest_subarray_k(vector<int> &arr,int k ){
             }
         }
     }
-
+   
     return max_counter;
 }
 
