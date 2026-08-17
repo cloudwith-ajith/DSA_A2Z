@@ -1,5 +1,3 @@
-
-
 /////------------------------------revesion --- prefix sum
 /////Longest Subarray with given Sum K(Positives)
 // brute force method and ##--##the optimal for the negative values ##--##
