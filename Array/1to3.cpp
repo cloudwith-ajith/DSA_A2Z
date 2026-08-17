@@ -10,7 +10,7 @@ int max_element(int arr[],int n){
         if(arr[i] > arr[max]){
             max = i; 
         }
-    }
+    } 
     return arr[max];
 } 
 
