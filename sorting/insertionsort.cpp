@@ -13,7 +13,7 @@ int main(){
     }
     
     for(int i : arr){
-        cout<<i<<" ";
+        cout<<i<<" ";   
     }
     return 0;
 }
