@@ -195,5 +195,34 @@ int main(){
 }
 
 //--------optimal 
+#include<bits/stdc++.h>
+using namespace std;
+
+void leader(vector<int> &arr){
+    int n = arr.size();
+    int max = arr[n-1];
+    vector <int> temp;
+    
+    temp.push_back(arr[n-1]);
+
+    for(int i = n-2; i >= 0; i--){
+        if(arr[i] > max){
+            temp.push_back(arr[i]);
+            max = arr[i];
+        }
+    }
+
+    reverse(temp.begin(),temp.end());
+
+    for(auto i : temp){
+        cout<<i<<" ";
+    }
+}
+
+int main(){
+    vector <int> arr = {4, 7, 1, 0};
+    leader(arr);
+    return 0;
+}
 
 
