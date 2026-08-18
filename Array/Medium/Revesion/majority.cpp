@@ -25,3 +25,8 @@ int main(){
     cout<<result;
     return 0;
 }
+
+// the time complexity of the code is O(n*n)
+// the space complexity of the code is O(1)
+
+////---------------------better method for the majorty
