@@ -30,3 +30,33 @@ int main(){
 // the space complexity of the code is O(1)
 
 ////---------------------better method for the majorty
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int majorty(vector<int> &arr){
+    int n = arr.size();
+    unordered_map <int,int> mpp;
+    //pre process
+    for(int i = 0; i < n; i++){
+        mpp[arr[i]]++;
+    }
+    //get the majority of the element 
+    for(auto i : mpp){
+        if(i.second > n/2){
+            return i.first;
+        }
+    }
+
+    return -1;
+}
+
+int main(){
+    vector <int> arr = {7, 0, 0, 1, 7, 7, 2, 7, 7};
+    int result = majorty(arr);
+    cout<<result;
+    return 0;
+}
+
+//----- the time compleity of the code is O(n)
+// the space complexity of the code is O(n) because of the hash map 
