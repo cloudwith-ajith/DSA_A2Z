@@ -404,3 +404,109 @@ int main(){
 
 // the time complexity of the code is O(n)
 // the space complexity of the cpde is O(n)
+
+/// set matrix 
+//optimal way 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void matrix(vector <vector<int>> &arr){
+    int n = arr.size();
+    int m = arr[0].size();
+    int firstrow = true;
+    int firstcol = true;
+
+    for(int i = 0 ; i < m; i++){
+        if(arr[0][i] == 0 ){
+            firstrow = false;
+        }
+    }
+
+    for(int i = 0 ; i < n; i++){
+        if(arr[i][0] == 0 ){
+            firstcol = false;
+        }
+    }
+
+    for(int i = 1;i < n; i++){
+        for(int j = 1; j < m; j++){
+            if(arr[i][j] == 0){
+                arr[i][0] = 0;
+                arr[0][j] = 0;
+            }
+        }
+    }
+
+    for(int i = 1; i <n; i++){
+        for(int j = 1; j < m; j++){
+            if(arr[i][0] == 0 || arr[0][j] == 0){
+                arr[i][j] = 0;
+            }
+        }
+    }
+
+    if(firstcol == false){
+        for(int  i = 0; i < n; i++){
+            arr[i][0] = 0;
+        }
+    }
+    
+    if(firstrow == false){
+        for(int  i = 0; i < m; i++){
+            arr[0][i] = 0;
+        }
+    }
+}
+
+
+
+int main(){
+    vector <vector<int>> arr = {{1,1,1},{1,0,1},{1,1,1}};
+    matrix(arr);
+    for(auto  i : arr){
+        for(auto j : i){
+            cout<<j<<" ";
+        }cout<<endl;
+    }
+    return 0;
+}
+//---------------------better 
+#include<bits/stdc++.h>
+using namespace std;
+
+void matrix(vector<vector<int>>&arr){
+    int n = arr.size();
+    int m = arr[0].size();
+    vector<int> row(n,1);
+    vector<int> col(m,1);
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){
+            if(arr[i][j] == 0){
+                row[i] = 0;
+                col[j] = 0; 
+            } 
+        }
+    }
+
+    for(int i = 0; i <n; i++){
+        for(int j = 0; j < m; j++){
+            if(row[i] == 0 || col[j] == 0){
+                arr[i][j] = 0;
+            }
+        }
+    }
+} 
+
+
+int main(){
+    vector <vector<int>> arr = {{1,1,1},{1,0,1},{1,1,1}};
+    matrix(arr);
+    for(auto  i : arr){
+        for(auto j : i){
+            cout<<j<<" ";
+        }cout<<endl;
+    }
+    return 0;
+}
