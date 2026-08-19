@@ -12,7 +12,7 @@ void merge(int arr[],int low,int mid,int high){
         if (arr[left] > arr[right]){
             temp.push_back(arr[right]);  
             right++;
-        }else{
+        }else{ 
             temp.push_back(arr[left]);
             left++;
         }
