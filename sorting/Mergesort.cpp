@@ -15,7 +15,7 @@ void merge(int arr[],int low,int mid,int high){
         }else{ 
             temp.push_back(arr[left]);
             left++;
-        }
+        } 
     }
     
     while(left <= mid){
