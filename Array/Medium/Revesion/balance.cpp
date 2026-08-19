@@ -288,3 +288,119 @@ int main(){
     }
     return 0;
 }
+
+
+//--------------------Longest Consecutive Sequence in an Array
+//------------------- brute force method
+// the time complexity of the code is O(2n)
+//------------the space complexity of the code is O(1)
+#include<bits/stdc++.h>
+using namespace std;
+
+bool linear(vector <int> arr,int num){
+    bool flag = false;
+    for(int i = 0; i < arr.size(); i++){
+        if(arr[i] == num){
+            flag = true;
+        }
+    }
+
+    return flag;
+}
+
+int consective(vector <int> &arr){
+    int n = arr.size();
+    int max_counter = 0;
+    
+    for(int i = 0; i < n; i++){
+        int counter = 1;
+        int num = arr[i]+1;
+        while(linear(arr, num)){
+            counter++;
+            num++;
+        }
+
+        max_counter = max(max_counter,counter);
+    }
+
+    return max_counter;
+}
+
+int main(){
+    vector <int> arr = {100,4,200,1,3,2};
+    int result = consective(arr);
+    cout<<result;
+    return 0;
+}
+
+//--- the better way 
+// the timecpmplexit of the code is O(nlogn)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int consective(vector <int> &arr){
+    int n = arr.size();
+    //sort the arr
+    sort(arr.begin(),arr.end());
+    int max_counter = 1;
+    int counter =1;
+    for(int i = 1; i < n; i++){
+        if(arr[i]-1 == arr[i-1]){
+            counter++;
+        }else if(arr[i] == arr[i -1]){
+            continue;
+        }else{
+            counter = 1;
+        }
+        max_counter = max(counter,max_counter);
+    }
+    return max_counter;
+}
+
+int main(){
+    vector <int> arr = {100,4,200,1,3,2};
+    int result = consective(arr);
+    cout<<result;
+    return 0;
+}
+
+
+////--------optimal wya for the problem
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+int consective(vector <int> &arr){
+    int n = arr.size();
+    unordered_set <int> st(arr.begin(),arr.end());
+    int max_counter = 0;
+    for(int i = 0; i < n; i++){
+        int start = 0;
+        int counter = 1;
+        if(st.find(arr[i] - 1) == st.end()){
+            start = arr[i];
+
+            while(st.find(start + 1) != st.end()){
+                counter++;
+                start++;
+            }
+
+            max_counter = max(max_counter,counter);
+        }
+    }
+
+    return max_counter;
+}
+
+int main(){
+    vector <int> arr = {100,4,200,1,3,2};
+    int result = consective(arr);
+    cout<<result;
+    return 0;
+}
+
+// the time complexity of the code is O(n)
+// the space complexity of the cpde is O(n)
