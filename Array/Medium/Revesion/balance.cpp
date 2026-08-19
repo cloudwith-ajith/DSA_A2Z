@@ -510,3 +510,96 @@ int main(){
     }
     return 0;
 }
+
+
+//---------------90 degree rotation
+#include<bits/stdc++.h>
+using namespace std;
+
+void deg90(vector<vector<int>> &mat){
+    int n = mat.size();
+    vector <vector <int>> temp (n , vector<int>(n));
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j <  n; j++){
+            temp[j][n-i-1] = mat[i][j];
+        }
+    }
+    for(auto i : temp){
+        for(auto j : i){
+            cout<<j<<" ";
+        }cout<<endl;
+    }
+
+    
+
+}
+
+
+int main(){
+    vector <vector <int>> mat = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+    deg90(mat);
+   
+    return 0;
+}
+//--------- this is the code, just print the 90degree not touch the 
+//---original array 
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void deg90(vector<vector<int>> &mat){
+    int n = mat.size();
+    //traveral the array 
+    for(int i = 0; i < n ; i++){
+        for(int j = i+1; j < n; j++){
+            swap(mat[i][j],mat[j][i]);
+        }
+    }
+
+    for(int i = 0; i < n; i++){
+        reverse(mat[i].begin(),mat[i].end());
+    }
+
+}
+
+
+int main(){
+    vector <vector <int>> mat = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+    deg90(mat);
+
+    for(auto i : mat){
+        for(auto j : i){
+            cout<<j<<" ";
+        }cout<<endl;
+    }
+   
+    return 0;
+}
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    vector <vector <int>> arr = {
+        { 1, 2, 3, 4 },
+        { 5, 6, 7, 8 },
+        { 9, 10, 11, 12 },
+        { 13, 14, 15, 16 }
+    };
+    vector <int> result = spiral(arr);
+    for(auto i : result){
+        cout<<i<<" ";
+    }
+    return 0;
+}
