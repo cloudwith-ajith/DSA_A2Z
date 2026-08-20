@@ -9,7 +9,7 @@ int partition(int arr[],int low,int high){
     int j = high;
     
     while(i < j){
-        while(arr[i] <= pivot && i < high){
+        while(arr[i] <= pivot && i < high){ 
             i++;
         }  
         while(arr[j] > pivot && j > low){
