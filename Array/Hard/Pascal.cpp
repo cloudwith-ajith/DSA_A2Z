@@ -1,4 +1,5 @@
 /////pascal triangle
+// This is the code for the picking up the correct element 
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -18,5 +19,43 @@ int main(){
     int col = 3;
     int result = position(n-1,col-1);
     cout<<result;
+    return 0;
+}
+
+
+//// code for the pascal triangle 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+vector<int> singleposition(int n){
+    vector<int> temp;
+    int ans = 1;
+    temp.push_back(1);
+    for(int i = 1; i < n; i++){
+        ans = ans * (n - i) / i;
+        temp.push_back(ans);
+    }
+
+    return temp;
+} 
+
+vector<vector<int>> pas(int n ){
+    vector<vector<int>> ans;
+    for(int i = 1; i < n; i++){
+        ans.push_back(singleposition(i));
+    }
+    return ans;
+}
+
+int main(){
+    int n = 7;
+    vector<vector<int>> res =  pas(n);
+    for(auto i : res ){
+        for(auto j : i){
+            cout<<j<<" ";
+        }cout<<endl;
+    }
     return 0;
 }
