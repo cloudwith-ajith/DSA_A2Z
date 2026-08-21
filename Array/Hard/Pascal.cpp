@@ -2,7 +2,7 @@
 //The Main formula is combination formula nCr
 // pascal is n-1Cr-1
 // the observation is the  if the r=3 we can only keep the n 3 time to bring the correct answer 
-// eg : n = 5 r = 2 --> 5x4x3x(2x1) / 1x2  * (1x2
+
 
 // This is the code for the picking up the correct element 
 
