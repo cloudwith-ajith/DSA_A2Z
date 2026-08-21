@@ -59,3 +59,31 @@ int main(){
     }
     return 0;
 }
+
+//--------------------------Pascal triangle picking the row 
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+vector<int> singleposition(int n){
+    vector<int> temp;
+    int ans = 1;
+    temp.push_back(1);
+    for(int i = 1; i < n; i++){
+        ans = ans * (n - i) / i;
+        temp.push_back(ans);
+    }
+
+    return temp;
+}
+
+int main(){
+    int n = 5;
+    vector<int> res =  singleposition(n);
+    for(auto i : res ){
+       cout<<i<<" ";
+    }
+    return 0;
+}
