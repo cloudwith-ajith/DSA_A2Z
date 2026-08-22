@@ -9,7 +9,7 @@
 #include<bits/stdc++.h>   
 using namespace std;
 
-int position(int n, int col){
+int position(int n, int col){  
     long long ans = 1;   
     for(int i = 0; i < col; i++){
         ans = ans * (n-i);  
