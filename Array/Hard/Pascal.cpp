@@ -6,7 +6,7 @@
 
 // This is the code for the picking up the correct element 
 
-#include<bits/stdc++.h>
+#include<bits/stdc++.h>   
 using namespace std;
 
 int position(int n, int col){
