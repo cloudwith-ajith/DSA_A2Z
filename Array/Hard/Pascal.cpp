@@ -15,7 +15,7 @@ int position(int n, int col){
     }
     return ans;
 }
-
+  
   
 int main(){
     int n = 5;
