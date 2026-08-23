@@ -2,8 +2,6 @@
 //The Main formula is combination formula nCr
 // pascal is n-1Cr-1  
 // the observation is the  if the r=3 we can only keep the n 3 time to bring the correct answer 
-
-
 // This is the code for the picking up the correct element 
 
 #include<bits/stdc++.h>   
