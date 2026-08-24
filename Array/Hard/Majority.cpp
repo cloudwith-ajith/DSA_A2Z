@@ -6,7 +6,7 @@ vector <int> majority(vector <int> &arr){
     int n = arr.size();
     vector <int> temp;
     int cnt1 = 0;
-    int cnt2 = 0;
+    int cnt2 = 0; 
     int el1 = INT_MIN;   
     int el2 = INT_MIN; 
 
