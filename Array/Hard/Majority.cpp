@@ -7,7 +7,7 @@ vector <int> majority(vector <int> &arr){
     vector <int> temp;
     int cnt1 = 0;
     int cnt2 = 0;
-    int el1 = INT_MIN;  
+    int el1 = INT_MIN;   
     int el2 = INT_MIN;
 
     for(int i = 0; i <  n; i++){
