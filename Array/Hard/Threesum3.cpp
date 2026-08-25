@@ -14,7 +14,7 @@ vector<vector<int>> threesum(vector<int> &arr){
                     sort(tp.begin(),tp.end());
                     temp.insert(tp);
                 }
-            }
+            }  
         }
     }
     vector<vector<int>> res(temp.begin(),temp.end());
