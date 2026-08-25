@@ -53,3 +53,5 @@ int main(){
     }
     return 0;
 }
+/// the time complexity of the code is O(n^3)
+// the space complexity of the code is O(no.of.element array ) and the that too used to return the array 
