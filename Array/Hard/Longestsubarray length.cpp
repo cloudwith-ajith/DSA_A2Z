@@ -18,7 +18,7 @@ int lonlen(vector<int> &arr, int target){
              maxlen = max(maxlen, i - mpp[sum]);
         }else{
                 // the condition is the prefix is not in the array then add
-                mpp[sum] = i;   
+                mpp[sum] = i;     
             }
         }
     //return the maxlen
