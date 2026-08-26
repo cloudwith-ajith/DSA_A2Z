@@ -23,7 +23,7 @@ int lonlen(vector<int> &arr, int target){
         }
     //return the maxlen
     return maxlen;
-}
+}  
 
 
 int main(){
