@@ -10,7 +10,7 @@ int lonlen(vector<int> &arr, int target){
     for(int i = 0 ; i < n; i++){
         // add the sum
         sum += arr[i];
-        // the sum equal to the target 
+        // the sum equal to the target  
         // then the len from the zero to is a subarray
         if(sum == target){
             maxlen = i + 1;
