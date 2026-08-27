@@ -12,7 +12,7 @@ int lonlen(vector<int> &arr, int target){
         sum += arr[i];
         // the sum equal to the target  
         // then the len from the zero to is a subarray
-        if(sum == target){
+        if(sum == target){  
             maxlen = i + 1;
         }else if(mpp.find(sum) != mpp.end()){                
              maxlen = max(maxlen, i - mpp[sum]);
