@@ -11,7 +11,7 @@ int max_element(int arr[],int n){
             max = i; 
         }
     } 
-    return arr[max];
+    return arr[max]; 
 } 
 
 int main(){
