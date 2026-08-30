@@ -8,7 +8,7 @@ int max_element(int arr[],int n){
     int max = 0;   
     for(int i = 0;i < n;i++){
         if(arr[i] > arr[max]){
-            max = i; 
+            max = i;  
         }
     } 
     return arr[max]; 
