@@ -15,7 +15,7 @@ vector<vector<int>> MOL(vector<vector<int>> &arr){
         while( j < n && arr[j][0] <= end){
             end =  max(end, arr[j][1]);
             j++; 
-        }
+        } 
         temp.push_back({start,end});
         i = j;
     }
@@ -68,3 +68,6 @@ int main(){
     }
     return 0;
 }
+
+//The time complexity of the code is  O(NlogN)
+//The space complexity of the code is O(n)
