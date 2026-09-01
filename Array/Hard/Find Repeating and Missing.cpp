@@ -5,29 +5,33 @@ using namespace std;
 
 vector<int> ReMis(vector<int> &arr){
     int n = arr.size();
+    // variable to store the missing value
     int missing = -1;
+    // to store the repeating value
     int repeating = -1;
-
+    // first loop for the 1 to n
     for(int i = 1; i < n+1; i++){
         bool flag = true;
         int counter = 0;
+        //the original array 
         for(int j  = 0; j < n; j++){
             if(i == arr[j]){
                 flag = false;
                 counter++;
             }
         }
-
+        // To check the flag 
         if(flag){
             missing = i;
         }
-        
-        if(counter == 2){1
+        //To check the counter
+        if(counter == 2){
             repeating = i;
         }
     }
-
+    // vector to return the answer not for the computation
     vector<int> res = {repeating,missing};
+    // return the value
     return res;
 }
 
@@ -38,7 +42,5 @@ int main(){
         cout<<i<<" ";
     }
     return 0;
-}
-
-// The Time complexity of the code is O(n*2)
+}// The Time complexity of the code is O(n*2)
 // The Space complexity of the code is O(1), we use vector for the returning the answer, not for the process.
