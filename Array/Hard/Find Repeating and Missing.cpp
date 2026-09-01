@@ -22,7 +22,7 @@ vector<int> ReMis(vector<int> &arr){
             missing = i;
         }
         
-        if(counter == 2){
+        if(counter == 2){1
             repeating = i;
         }
     }
@@ -39,3 +39,6 @@ int main(){
     }
     return 0;
 }
+
+// The Time complexity of the code is O(n*2)
+// The Space complexity of the code is O(1), we use vector for the returning the answer, not for the process.
