@@ -44,3 +44,42 @@ int main(){
     return 0;
 }// The Time complexity of the code is O(n*2)
 // The Space complexity of the code is O(1), we use vector for the returning the answer, not for the process.
+
+
+//------------------better method 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int> ReMis(vector<int> &arr){
+    int n = arr.size();
+    int hash[n + 1] ={ 0 };
+    for(int i = 0; i < n; i++){
+        hash[arr[i]]++;
+    }
+    int missing = -1;
+    int repeat = -1;
+    for(int i = 1; i < n; i++){
+        if(hash[i] == 0){
+            missing = i;
+        }else if(hash[i] == 2){
+            repeat = i;
+        }
+    }
+
+    vector<int> res = {repeat ,missing};
+    return res;
+}
+
+int main(){
+    vector<int> arr = {3,5,4,1,1};
+    vector<int> result = ReMis(arr);
+    for(auto i : result){
+        cout<<i<<" ";
+    }
+    return 0;
+}
+
+//------------using the hashing
+// The Time complexity of the code is O(n)
+// The Space complexity of the code is O(n)
