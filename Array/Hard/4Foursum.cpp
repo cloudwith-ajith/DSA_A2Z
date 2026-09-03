@@ -5,7 +5,7 @@ vector<vector<int>> foursum(vector<int> &arr,int target){
     int n = arr.size();
     vector<vector<int>> ans;
     sort(arr.begin(),arr.end());
-    for(int i = 0; i < n; i++){
+    for(int i = 0; i < n; i++){   
         if(i > 0 && arr[i] == arr[i-1]){
             continue;
         }
