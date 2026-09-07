@@ -10,7 +10,7 @@ int max_cons(int arr[],int n){
     for(int i = 0;i < n;i++){
         if(arr[i] == 1){
             counter++;
-            // maxx = max(counter,maxx);
+            // maxx = max(counter,maxx);  
             if(counter > maxx){
                 maxx = counter; 
             }
