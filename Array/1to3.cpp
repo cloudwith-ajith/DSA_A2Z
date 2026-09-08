@@ -17,7 +17,7 @@ int max_element(int arr[],int n){
 int main(){   
     int arr[5] ={2,5,1,3,0};
     int n = size(arr);
-    cout<<max_element(arr,n);
+    cout<<max_element(arr,n);   
     return 0;
 }
 
