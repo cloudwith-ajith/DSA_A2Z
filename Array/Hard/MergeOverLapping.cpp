@@ -4,7 +4,7 @@ using namespace std;
 
 
 vector<vector<int>> MOL(vector<vector<int>> &arr){
-    int n = arr.size();
+    int n = arr.size();  
     //sort the array
     sort(arr.begin(),arr.end());
     vector<vector<int>> temp;
