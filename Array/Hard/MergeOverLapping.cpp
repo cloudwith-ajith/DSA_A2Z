@@ -8,7 +8,7 @@ vector<vector<int>> MOL(vector<vector<int>> &arr){
     //sort the array
     sort(arr.begin(),arr.end());
     vector<vector<int>> temp;
-    for(int i = 0; i < n;){
+    for(int i = 0; i < n;){ 
         int start = arr[i][0];
         int end = arr[i][1];
         int j = i + 1;
