@@ -1,4 +1,4 @@
-// code for the count the subarray 
+  // code for the count the subarray 
 //brute force method 
 // the time complexity of the code is O(n*n) which mean 2n
 // the space complxity of the code is O(1)
