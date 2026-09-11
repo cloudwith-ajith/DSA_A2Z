@@ -4,7 +4,7 @@
 // the space complxity of the code is O(1)
 
 #include<bits/stdc++.h>
-using namespace std;
+using namespace std; 
 
 int count_subarray(vector <int> &arr,int k){
     int n = arr.size();
