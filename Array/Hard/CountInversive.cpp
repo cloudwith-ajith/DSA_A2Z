@@ -9,7 +9,7 @@ int CountInver(vector <int> &arr){
         for(int j = i + 1; j < n; j++){
             if(arr[i] > arr[j]){
                 counter++;
-            }
+            }  
         }
     }
     return counter;
