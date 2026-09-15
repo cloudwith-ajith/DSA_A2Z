@@ -4,7 +4,7 @@ using namespace std;
 
 int CountInver(vector <int> &arr){
     int n = arr.size();
-    int counter = 0;
+    int counter = 0; 
     for(int i = 0; i < n; i++){
         for(int j = i + 1; j < n; j++){
             if(arr[i] > arr[j]){
