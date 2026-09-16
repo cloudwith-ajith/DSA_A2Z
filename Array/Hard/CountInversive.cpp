@@ -11,7 +11,7 @@ int CountInver(vector <int> &arr){
                 counter++;
             }    
         }
-    }
+    } 
     return counter;
 }
 
