@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int CountInver(vector <int> &arr){
+int CountInver(vector <int> &arr){   
     int n = arr.size();
     int counter = 0; 
     for(int i = 0; i < n; i++){
