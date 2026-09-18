@@ -1,3 +1,4 @@
+//brute force method for the problem 
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -20,3 +21,7 @@ int main(){
     cout<<result;
     return 0;
 }
+
+// The time complexity of the code is  O(n^2)
+// The Space complexity of the code is O(1)
+
