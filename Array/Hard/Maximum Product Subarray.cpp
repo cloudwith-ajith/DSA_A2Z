@@ -25,5 +25,10 @@ int main(){
 
 // The Time complexity of the code is O(n^2)
 // The Space complexity of the code is O(1)
+//--------------------------------------------------------------------------
+// The optimal solution 
+
+
+
 
 
