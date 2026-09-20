@@ -59,5 +59,12 @@ int main(){
 // The Time complexity of the code is O(n)
 // The Space complexity of the code is O(1)
 
+// The intution is 
+// 1. Every element is the array is positive then product of all the array element is the max product value
+// 2. Even number of the negative numbers in the array also same as the condition one 
+// 3. IF the negative number present odd time then the prefix or suffix of the negataive is the max prod
+// 4. If it contain zero then need to set the prefix and suffix as the defaul number one
+
+
 
 
