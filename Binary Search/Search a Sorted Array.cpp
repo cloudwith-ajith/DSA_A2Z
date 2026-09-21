@@ -84,3 +84,39 @@ int main(){
 //     (Perfectly safe, well below the limit).Divide the distance by 2:500,000,000 / 2 = 250,000,000.Add it back to low:1,500,000,000 + 250,000,000 = 1,750,000,000.
 //     The calculation stays completely within safe boundaries at every single step, giving you the exact correct midpoint without any risk of memory corruption.
 
+
+
+// recersive method 
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int res(vector <int> &arr, int low, int high, int target ){
+    if (low <= high){
+        int mid = low + (high - low) / 2;
+        if(arr[mid] == target) return mid;
+        else if(arr [mid] > target){
+            return res(arr,low , mid - 1,target);
+        }else{
+            return res(arr,mid + 1, high,target);
+        }
+    }
+    return -1;
+} 
+
+
+int resBS(vector <int> &arr,int x){
+    int n = arr.size();
+    int ind = res(arr,0,n-1, x);
+    return ind;
+} 
+
+
+int main(){
+    vector <int> arr = {1, 3, 5, 7, 9, 11};
+    int target = 9;
+    int result =  resBS(arr,target);
+    cout<< result;
+    return 0;
+}
