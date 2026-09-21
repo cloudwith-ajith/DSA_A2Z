@@ -41,7 +41,7 @@ int binarysearch(vector <int> &arr,int x){
     //while loop 
     while(low <= high){
         // get the mid value
-        int mid = (low + high) / 2;
+        int mid = low + (high - low) / 2;
         // if the mid value is the target value, then return the index
         if(arr[mid] == x){
             return mid;
