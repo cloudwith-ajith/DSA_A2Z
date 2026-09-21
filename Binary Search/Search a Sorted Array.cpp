@@ -70,3 +70,17 @@ int main(){
 
 // The Time complexity of the code is O(log n)
 // The Space complexity of the code is O(1)
+
+// ⚠️ The Problem with (low + high) / 2In C++,
+//     a standard 32-bit signed integer (int) has a maximum maximum capacity of 2,147,483,647.
+//     If you are searching through a massive array (like a large database or a huge dataset in competitive programming) where both low and high are large numbers,
+// adding them together can easily push the value past that maximum limit.Example of how it breaks:Assume low = 1,500,000,000Assume high = 2,000,000,000Step 1: 
+// The computer tries to calculate low + high → 1,500,000,000 + 2,000,000,000 = 3,500,000,000.
+//     Step 2: Because 3,500,000,000 is greater than the integer limit (2,147,483,647), the value overflows into negative numbers.
+//     It wraps around and becomes roughly -794,967,296.Step 3: The computer divides that negative number by 2, resulting in a negative index (-397,483,648).
+// The Crash: Trying to access arr[-397,483,648] causes your program to crash instantly with a Segmentation Fault or out-of-bounds error.
+// The Solution: low + (high - low) / 2By rewriting the equation, we change the order of operations so that the computer never has to calculate 
+// a number larger than high itself.Let's plug the same numbers into the safe formula:Calculate the distance (high - low):2,000,000,000 - 1,500,000,000 = 500,000,000 
+//     (Perfectly safe, well below the limit).Divide the distance by 2:500,000,000 / 2 = 250,000,000.Add it back to low:1,500,000,000 + 250,000,000 = 1,750,000,000.
+//     The calculation stays completely within safe boundaries at every single step, giving you the exact correct midpoint without any risk of memory corruption.
+
