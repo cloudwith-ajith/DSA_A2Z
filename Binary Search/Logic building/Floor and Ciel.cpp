@@ -140,3 +140,5 @@ int main() {
 }
 
 
+// the time complexity of the code is O(log n)
+// the space complexity of the code is O(1)  Note: here the vector is used for the return the answer not for the execution part 
