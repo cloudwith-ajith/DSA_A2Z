@@ -1,6 +1,9 @@
+// --------------------------------------------------LOWER BOUND---------------------------------
+// -- Conditions 
+// Return the equal to or the first greater element of the target 
+
+
 // brute force method for the lower bound 
-
-
 #include<bits/stdc++.h>
 using namespace std;
 
