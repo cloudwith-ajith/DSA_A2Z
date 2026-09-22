@@ -1,3 +1,4 @@
+// brute force method for the problem 
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -32,3 +33,6 @@ int main(){
     }
     return 0;
 }
+
+// the time complexity of the code is O(n);
+// the space complexity of the code is O(1)  vector used only for the answer returns not for the execution 
