@@ -8,7 +8,7 @@ int lowerbound(vector <int> &arr, int target){
     int n = arr.size();
     int low = 0;
     int high = n - 1;
-    int lower = -1;
+    int lower = n;
     while(low <= high){
         int mid = (low + high) / 2;
 
@@ -28,7 +28,7 @@ int upperbound(vector <int> &arr, int target){
     int n = arr.size();
     int low = 0;
     int high = n - 1;
-    int upper = -1;
+    int upper = n;
     while(low <= high){
         int mid = (low + high) / 2;
 
@@ -45,7 +45,7 @@ int upperbound(vector <int> &arr, int target){
 int CountOcc(vector <int> &arr, int target){
     int first_occ = lowerbound(arr,target);
 
-    if(arr[first_occ] != target || first_occ == (int) arr.size()){
+    if( first_occ == (int) arr.size() || arr[first_occ] != target ){
         return 0;
     }
 
@@ -67,3 +67,8 @@ int main(){
 
 // the time complexity of the code is O(log n)
 // the space complexity of the code is O(1)
+
+
+///++++++++++++++++++++++++++++++++++++++++++++++++using the pure binray search without the lower and upper bound++++++++++++++++++++++++++++
+
+
