@@ -64,3 +64,6 @@ int main(){
     cout << result;
     return 0;
 }
+
+// the time complexity of the code is O(log n)
+// the space complexity of the code is O(1)
