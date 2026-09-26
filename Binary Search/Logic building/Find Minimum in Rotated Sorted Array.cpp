@@ -6,7 +6,7 @@
 // Optimal way for the problem 
 
 #include<bits/stdc++.h>
-using namespace std;
+using namespace std;  
 
 int min_element(vector <int> &arr){  
     int n = arr.size();
