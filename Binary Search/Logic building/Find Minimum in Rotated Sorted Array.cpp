@@ -3,7 +3,7 @@
 // the time complexity of the code is O(n)
 // the space complexity of the code is O(1)
 
-// Optimal way for the problem 
+// Optimal way for the problem   
 
 #include<bits/stdc++.h>
 using namespace std;  
