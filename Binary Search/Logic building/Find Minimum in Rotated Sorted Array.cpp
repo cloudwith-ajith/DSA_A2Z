@@ -8,7 +8,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int min_element(vector <int> &arr){
+int min_element(vector <int> &arr){  
     int n = arr.size();
     int low = 0;
     int high = n - 1;
