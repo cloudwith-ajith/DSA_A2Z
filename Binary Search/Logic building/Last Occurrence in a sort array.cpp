@@ -5,7 +5,7 @@ using namespace std;
 
 int LastOccur(vector <int> &arr,int target){
     int  n = arr.size();
-    int answer = -1;
+    int answer = -1;   
 
     for(int i = 0; i < n; i++){
         if(arr[i] == target){
