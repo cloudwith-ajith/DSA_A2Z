@@ -11,7 +11,7 @@ int LastOccur(vector <int> &arr,int target){
         if(arr[i] == target){
             answer = i;
         }
-    }
+    }  
     return answer;
 }
 
