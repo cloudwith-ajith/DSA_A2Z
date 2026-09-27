@@ -1,7 +1,7 @@
 //------------------------brute force method for the problem  --------
 
 #include<bits/stdc++.h>
-using namespace std;
+using namespace std;   
 
 int LastOccur(vector <int> &arr,int target){
     int  n = arr.size();
