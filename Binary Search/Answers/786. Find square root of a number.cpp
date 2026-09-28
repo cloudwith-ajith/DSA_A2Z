@@ -21,7 +21,6 @@ int main(){
 // The Time complexity of the code is O(n)
 // The Space complexity of the code is O(1)
 
-
 //------------------------------optimal way----------
 
 
@@ -60,4 +59,3 @@ int main(){
 // The Time complexity of the code is O(log n)
 // The Space complxity of the code is O(1)
 
-//
