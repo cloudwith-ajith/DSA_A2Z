@@ -3,7 +3,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int floatsquare(int num) {
+int floorsquare(int num) {
     int answer = 0;
     for (int i = 0; i * i <= num; i++) {
         answer = i;
