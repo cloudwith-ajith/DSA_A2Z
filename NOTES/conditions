@@ -1,1 +1,11 @@
+To find the max element in the vector/ array
 
+Here is the quick breakdown of *max_element(arr.begin(), arr.end()):
+• arr.begin(), arr.end() → Tells the computer to search through the entire array from the first item to the last.
+• max_element(...) → Scans the array and returns a pointer (memory location) to the largest value.
+• * (Asterisk) → Opens that memory location to pull out the actual integer value inside.
+
+[ 8,  4,  2,  3 ]
+  ^
+  |-- max_element() finds this location.
+  |-- * extracts the actual value: 8.
