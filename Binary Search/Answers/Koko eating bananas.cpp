@@ -30,3 +30,6 @@ int main(){
     return 0;
 }
 
+
+// The time complexity of the code is O(max x n)
+
