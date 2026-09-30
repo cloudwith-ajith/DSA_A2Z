@@ -32,4 +32,5 @@ int main(){
 
 
 // The time complexity of the code is O(max x n)
+// The space complexity of the code is O(1)
 
