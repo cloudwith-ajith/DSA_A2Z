@@ -83,6 +83,6 @@ int main(){
     return 0;
 }
 
-
+// important formula ---> high + 1 + k // low + k
 // the time complexity of code is O(log n)
 // the space complexity of the code is O(1)
