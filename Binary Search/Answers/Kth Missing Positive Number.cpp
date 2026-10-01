@@ -35,3 +35,54 @@ int main(){
 
 // the time complexity of the code is O(n)
 // the space complexity of the code is O(1)
+
+
+// the optimal way for the problem 
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+// Function to find the kth missing positive integer using Binary Search
+int Kth_Missing(vector <int> &arr, int k){
+    int n = arr.size();
+    int low = 0;
+    int high = n - 1;
+    
+    // Perform standard binary search to find the transition point
+    while(low <= high){
+        // Calculate the middle index using proper operator precedence
+        int mid = (low + high) / 2;
+        
+        // Calculate total missing numbers up to the current 'mid' index
+        // Formula: Actual value - Expected value if nothing was missing
+        int missing = arr[mid] - (mid + 1);
+        
+        // If the missing count is less than k, the kth missing number lies to the right
+        if(missing < k){
+            low = mid + 1;
+        }
+        // If the missing count is greater than or equal to k, it lies to the left
+        else{
+            high = mid - 1;
+        }
+    }
+    
+    // After the loop terminates, 'low' points to the position where 
+    // the kth missing number can be derived mathematically using 'low + k'
+    return low + k;
+}
+
+int main(){
+    // Sample strictly increasing array
+    vector <int> arr = {1, 4, 6, 8, 9};
+    int k = 3;
+    
+    // Output the result of the function
+    cout << "The " << k << "th missing number is: " << Kth_Missing(arr, k);
+    return 0;
+}
+
+
+// the time complexity of code is O(log n)
+// the space complexity of the code is O(1)
