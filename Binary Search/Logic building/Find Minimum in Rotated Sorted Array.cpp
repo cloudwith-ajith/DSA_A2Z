@@ -10,7 +10,7 @@ using namespace std;
 
 int min_element(vector <int> &arr){  
     int n = arr.size();
-    int low = 0;
+    int low = 0;  
     int high = n - 1;
     int minn = INT_MAX;
 
