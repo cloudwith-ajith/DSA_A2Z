@@ -17,7 +17,7 @@ int min_element(vector <int> &arr){
     while(low <= high){
         int mid = (low + high) / 2;
         if(arr[low] <= arr[mid]){
-            minn = min(arr[low],minn);
+            minn = min(arr[low],minn);  
             low = mid + 1;
         }else{
             minn = min(minn,arr[mid]);
