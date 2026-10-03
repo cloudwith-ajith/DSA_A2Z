@@ -16,7 +16,7 @@ int Kth_Missing(vector <int> &arr, int k){
         } else {
             // Once arr[i] > k, no future elements can affect or shift our target.
             // We can break early because the array is sorted.
-            break;
+            break;  
         }
     }
     
