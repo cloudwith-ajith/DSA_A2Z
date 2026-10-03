@@ -22,7 +22,7 @@ int Kth_Missing(vector <int> &arr, int k){
     
     // The shifted 'k' value is now exactly the k-th missing number
     return k;
-}
+}  
 
 int main(){
     vector <int> arr = {1, 4, 6, 8, 9};
