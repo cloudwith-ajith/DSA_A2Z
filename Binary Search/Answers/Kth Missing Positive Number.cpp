@@ -7,7 +7,7 @@ int Kth_Missing(vector <int> &arr, int k){
     int n = arr.size();
     
     // Traverse the sorted array sequentially
-    for(int i = 0; i < n; i++){
+    for(int i = 0; i < n; i++){  
         // If the current element is less than or equal to our target 'k',
         // it means an available number is occupied by the array.
         // We must shift our target to the right to find the next missing integer.
