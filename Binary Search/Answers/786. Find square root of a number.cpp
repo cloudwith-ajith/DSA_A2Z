@@ -14,7 +14,7 @@ int floorsquare(int num) {
 int main(){
     int number = 36;
     int result = floatsquare(number);
-    cout<<result;
+    cout<<result;  
     return 0;
 }
 
