@@ -1,3 +1,51 @@
+// brute force method for the code is 
+#include <bits/stdc++.h>
+using namespace std;
+
+int findPeakElement(vector<int>& nums) {
+        // A single element is always a peak.
+    if (nums.size() == 1) {
+        return 0;
+    }
+ 
+    for (int i = 0; i < (int)nums.size(); i++) {
+            // Check the first element using only the right neighbor.
+        if (i == 0) {
+            if (nums[i] > nums[i + 1]) {
+                return i;
+            }
+        } else if (i == (int)nums.size() - 1) {
+                // Check the last element using only the left neighbor.
+            if (nums[i] > nums[i - 1]) {
+                return i;
+            }
+        } else {
+            // A middle element is a peak only if it is greater than both sides.
+            if (nums[i] > nums[i - 1] && nums[i] > nums[i + 1]) {
+                return i;
+            }
+        }
+     }
+ 
+    return -1;
+}
+
+ 
+// Driver code starts
+int main() {
+    vector<int> nums = {1, 2, 1, 3, 5, 6, 4};
+
+    cout << findPeakElement(nums) << endl;
+ 
+    return 0;
+}
+
+
+// the time complexity of the code is O(n)
+// the space compleity of the code is O(1)
+
+
+//==============================================================================================
 // optimal way for the code 
 
 
