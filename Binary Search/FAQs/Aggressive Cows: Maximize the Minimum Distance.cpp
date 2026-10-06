@@ -51,3 +51,59 @@ int main(){
 
 // The time complexity of the code is O(n x (max - min))
 // the space complexity if the code is (1)
+
+
+// optimal way for the problem
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+
+bool helper_function(vector <int> &arr, int k, int i){
+    int cows = 1;
+    int n = arr.size();
+    int last_placed = arr[0];
+    for(int j = 1; j < n; j++){
+        if(arr[j] - last_placed >= i){
+            cows++;
+            last_placed = arr[j];
+        }
+        if(cows >= k){
+                return true;
+            }
+        }
+    return false;
+
+}
+
+
+int Aggressive_cows(vector <int> &arr, int k ){
+    int maxi = *max_element(arr.begin(),arr.end());
+    int mini = *min_element(arr.begin(),arr.end());
+    int high = maxi - mini;
+    int low = 1;
+    sort(arr.begin(),arr.end());
+    while(low <= high){
+        long long mid = (low + high) / 2;
+        if(helper_function(arr,k,mid)){
+            low = mid + 1;
+        }else{
+            high = mid - 1;
+        }
+    }
+
+    return high;
+}
+
+
+int main(){
+    vector <int> arr = {1, 2, 4, 8, 9};
+    int k = 3;
+    cout<<Aggressive_cows(arr,k);
+    return 0;
+}
+
+// the time complexity of the code is O(log n + log n( max - mix))
+// the space complexity of the code is O(1)
