@@ -16,7 +16,7 @@ bool helper_function(vector <int> &arr, int student, int limit){
             div++;
             page_count = arr[i];
         }
-    }
+    }  
     if(div > student){
         return false;
     }
