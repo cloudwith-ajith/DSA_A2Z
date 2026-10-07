@@ -10,7 +10,7 @@ bool helper_function(vector <int> &arr, int student, int limit){
     int div = 1;
     int page_count = 0;
     for(int i = 0 ; i < n; i++){
-        if(page_count + arr[i] <= limit){
+        if(page_count + arr[i] <= limit){ 
             page_count += arr[i];
         }else{
             div++;
