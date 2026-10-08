@@ -1,5 +1,4 @@
-
-
+// optimnal  method for the problem 
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -40,11 +39,12 @@ double Median_arrays(vector <int> &arr1, vector <int> &arr2){
     return 0.00;
 }
  
-
-
 int main(){
     vector <int> arr1 = {1,2, 3};
     vector <int> arr2 = {4,5};
     cout<<Median_arrays(arr1, arr2);
     return 0;
 }
+
+// The time complexity of the code is O(log (min(arr1, arr2));
+// the space complexity of the code is O(1)
