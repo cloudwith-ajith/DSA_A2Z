@@ -2,7 +2,7 @@
 
 
 ##include<bits/stdc++.h>
-using namespace std;
+using namespace std; 
 
 // This helper function counts how many NEW gas stations are required 
 // if the maximum allowed distance between any two stations is set to 'dis'.
