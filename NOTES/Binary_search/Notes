@@ -1,1 +1,12 @@
 // Terms need to remeber 
+
+2D Array 
+
+Find the Row with Maximum 1s in a Sorted Binary Matrix
+
+# brute force method, linear search for every element in the array 
+# optimal way, binary search 
+
+The correct code starts at the top-right corner and moves left whenever it hits a 1, immediately updating the winning row index (answer = row). If it hits a 0,
+it moves down to search the next row while keeping that left-side boundary. 
+This guarantees that the last row to successfully push the boundary left is correctly captured before the loop ends.
