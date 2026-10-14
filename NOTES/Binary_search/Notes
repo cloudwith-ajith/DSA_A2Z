@@ -1,6 +1,32 @@
 // Terms need to remeber 
 
-2D Array 
+
+
+
+/// Binary search 
+
+log n
+
+we need to cut one side in search range 
+
+can only possible in the sorted array
+
+
+//lower bound 
+small value or next greater that x
+
+//upper bound 
+first greater that x
+
+
+
+
+
+
+
+
+
+///2D Array 
 
 1 > Find the Row with Maximum 1s in a Sorted Binary Matrix
 
@@ -28,4 +54,9 @@ colm = mid % col
 using this we can used to figure out the element i in the right or in the left 
 
 
+3 > Search in a Row and Column-Wise Sorted Matrix
+
+here the same way we used in the first problem, we need to place the one pointer in the col - 1
+and the second one on the row first element and if the element is greater than the target then move left 
+else move right
 
