@@ -2,7 +2,7 @@
 
 2D Array 
 
-Find the Row with Maximum 1s in a Sorted Binary Matrix
+1 > Find the Row with Maximum 1s in a Sorted Binary Matrix
 
 # brute force method, linear search for every element in the array 
 # optimal way, binary search 
@@ -10,3 +10,22 @@ Find the Row with Maximum 1s in a Sorted Binary Matrix
 The correct code starts at the top-right corner and moves left whenever it hits a 1, immediately updating the winning row index (answer = row). If it hits a 0,
 it moves down to search the next row while keeping that left-side boundary. 
 This guarantees that the last row to successfully push the boundary left is correctly captured before the loop ends.
+
+
+2 > Search in a Sorted 2D Matrix Using Binary Search
+
+// brute force method used the linear search 
+
+// optial way for the problem to used the binary search
+
+important note 
+
+we can get the exact value from the 2 d array by 
+
+row = mid / col
+colm = mid % col
+
+using this we can used to figure out the element i in the right or in the left 
+
+
+
