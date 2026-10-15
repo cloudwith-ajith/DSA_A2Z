@@ -18,9 +18,24 @@ small value or next greater that x
 //upper bound 
 first greater that x
 
+4 >Search in Rotated Sorted Array
+
+We need two condition for the problem
+
+1, split the array in and check the left half is sorted or not 
+  if sorted then check for the target is in that range 
+  if yes then move the high to  the mid - 1
+else then check whether the target is in the right range 
+  if yes then move the low - mid + 1
 
 
+5 > Search in Rotated Sorted Array II: With Duplicates
 
+sometime we have the edge case like {3,1,2,3,3,3}
+in this testcase we have low, mid, high as the same value, even you check the condition for the sorted side 
+unable to figure out that, so trim the edges 
+high++
+low--
 
 
 
@@ -59,4 +74,6 @@ using this we can used to figure out the element i in the right or in the left
 here the same way we used in the first problem, we need to place the one pointer in the col - 1
 and the second one on the row first element and if the element is greater than the target then move left 
 else move right
+
+
 
