@@ -698,3 +698,146 @@ int main(){
     cout<<single(arr);
     return 0;
 }
+
+
+////#include <iostream>
+using namespace std;
+
+int perfect_Square(int n) {
+    // Handle edge cases for 0 and 1 immediately
+    if (n == 0 || n == 1) return n;
+
+    long long low = 1;
+    long long high = n; // Changed from n/2 to handle n=1 properly
+    long long answer = -1;
+
+    while (low <= high) {
+        long long mid = low + (high - low) / 2;
+        long long square = mid * mid; // Prevents integer overflow
+
+        if (square <= n) {
+            answer = mid;
+            low = mid + 1; // Look for a larger potential square root
+        } else {
+            high = mid - 1; // Look for smaller numbers
+        }
+    }
+
+    return answer;
+}
+
+int main() {
+    int n = 28;
+    cout << "Integer square root of " << n << " is: " << perfect_Square(n) << endl;
+    return 0;
+}
+
+
+
+
+////////////////////////////
+ find the nth root of the number 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+int helper_function(int mid, int n){
+    int ans = 1;
+
+    for(int i = 0 ; i < n; i++){
+        ans = ans * mid;
+    }
+
+    return ans;
+}
+
+
+
+int Root_p(int n , int m){
+    int  low = 0;
+    int high = m;
+
+    while(low <= high){
+       int mid = low + ( high - low  ) / 2;
+
+        int x = helper_function(mid, n);
+
+
+        if(x == m){
+            return mid;
+        }
+
+        else if(x < m){
+            low = mid + 1;
+        }else{
+            high = mid - 1;
+        }
+    }
+
+    return -1;
+}
+
+
+int main(){
+    int n = 4;
+    int m = 69;
+    cout<<Root_p(n,m);
+}
+
+// the time complexity of the code is O(log n + m)
+// the space complexity of the code is O(1)
+
+
+
+//////////////////////////////////////////////////// find the smallest divisor in the array 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+int helper_function(vector <int> arr, int div){
+    int n  = arr.size();
+    int count = 0;
+
+    for(int i = 0; i < n; i++){
+        count += (arr[i] + div - 1) / div;
+    }
+
+    return count;
+}
+
+
+
+int Small_divisor(vector <int> &arr, int threshould){
+    int n = arr.size();
+
+    int low = 1;
+    int high = *max_element(arr.begin(),arr.end());
+    int answer = -1;
+
+    while(low <= high){
+        int mid = low + (high - low) / 2;
+
+        int x = helper_function(arr, mid);
+
+        if(x <= threshould){
+            answer = mid;
+            high = mid - 1;
+        }else{
+            low = mid + 1;
+        }
+    }
+
+    return answer;
+}
+
+
+int main(){
+    vector <int> arr = {1,2,5,9};
+    int threshould = 6;
+    cout<<Small_divisor(arr,threshould);
+    return 0;
+}
