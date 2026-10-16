@@ -41,6 +41,10 @@ On Answers
 
 // The most important thing in this kind of problem we need to figure out the 
 
+// The smallest divisor using the threshould 
+// smae for the koko banana 
+
+//  ceil((double))  ---- > (math formula for the ceil) ---> num + div - 1  / div  \\
 
 
 ///2D Array 
