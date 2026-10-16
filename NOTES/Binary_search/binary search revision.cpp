@@ -841,3 +841,55 @@ int main(){
     cout<<Small_divisor(arr,threshould);
     return 0;
 }
+
+
+// KOKO banana
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int helper_function(vector <int> &arr, int div){
+    int n = arr.size();
+
+    int sum = 0;
+
+    for(int i = 0; i < n ; i ++){
+        sum += ceil((double)arr[i] / div);
+    }
+
+    return sum;
+}
+
+
+int kokoBanana(vector <int> &arr, int h){
+    int n = arr.size();
+    int low = 1;
+    int high = *max_element(arr.begin(),arr.end());
+
+    int answer = -1;
+
+    while(low <= high){
+        int mid = low + ( high - low ) / 2;
+
+        int x = helper_function(arr, mid);
+
+        if(x <= h){
+            answer = mid;
+            high = mid - 1;
+        }else{
+            low = mid  + 1;
+        }
+    }
+
+    return answer;
+}
+
+
+int main(){
+    vector <int> arr = {30, 11, 23, 4, 20};
+    int h = 5;
+    cout<<kokoBanana(arr,h);
+    return 0;
+}
