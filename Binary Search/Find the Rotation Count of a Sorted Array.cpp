@@ -11,7 +11,7 @@ int findrotation(vector <int> &arr){
     int index = -1;
 
     while(low <= high){
-        if(arr[low] <= arr[high]){
+        if(arr[low] <= arr[high]){   
             if(arr[low] < value){
                 index = low;
                 value = arr[low];
