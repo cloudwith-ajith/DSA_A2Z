@@ -1035,3 +1035,59 @@ int main(){
     return 0;
 }
 // optimal way
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+bool helper_function(vector <int> &arr, int days, int target){
+    int n = arr.size();
+   
+    int sum = 0;
+    int day = 1;
+    for(int j = 0; j < n; j++){
+        if(sum + arr[j] > target){
+            sum = arr[j];
+            day++;
+        }else{
+            sum += arr[j];
+        }
+    }
+
+    if(day <= days){
+        return true;
+    }
+
+    return false;
+}
+
+
+int capacity(vector <int> &arr, int days){
+    int low = *max_element(arr.begin(),arr.end());
+    int high = accumulate(arr.begin(), arr.end(),0);
+    int answer = -1;
+
+    while(low <= high){
+        int mid = low + (high - low) / 2;
+        if(helper_function(arr, days,mid)){
+            answer  = mid;
+            high = mid - 1;
+        }else{
+            low = mid + 1;
+        }
+    }
+
+    return answer;
+}
+
+
+
+int main(){
+    vector <int> arr ={1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int days = 5;
+    cout<<capacity(arr,days);
+    return 0;
+}
+
+//--------------------------------
