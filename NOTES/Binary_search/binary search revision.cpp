@@ -893,3 +893,52 @@ int main(){
     cout<<kokoBanana(arr,h);
     return 0;
 }
+
+
+
+/// bouquets problem
+
+
+// brute force moethod for the problem
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int bouque(vector <int> &arr, int m, int k){
+    int n = arr.size();
+    int high = *max_element(arr.begin(),arr.end());
+
+    for(int i = 1; i <= high; i++){
+        int b = 0;
+        int f = 0;
+        for(int j = 0; j < n; j++){
+            if(arr[j] <= i){
+                f++;
+
+                if(f == k){
+                    b++;
+                    f = 0;
+                }
+            }else{
+                f = 0;
+            }
+        }
+
+        if( b >= m){
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+
+
+int main(){
+    vector <int> arr = {7, 7, 7, 7, 13, 11, 12, 7};
+    int m = 2;
+    int k = 3;
+    cout<<bouque(arr,m,k);
+    return 0;
+}
