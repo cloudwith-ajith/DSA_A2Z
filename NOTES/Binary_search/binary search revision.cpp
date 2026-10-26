@@ -1091,3 +1091,34 @@ int main(){
 }
 
 //--------------------------------
+//finding the missing number from the sorted array 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int Missing(vector <int> &arr, int k ){
+    int low = 0;
+    int high = arr.size() - 1;
+    while(low <= high){
+        int mid = low + (high - low) / 2;
+        int missing = arr[mid] - (mid  + 1);
+        if(missing < k ){
+            low = mid + 1;
+        }else{
+            high = mid - 1;
+        }
+    }
+
+    return low + k;
+    // return low + k
+    // have been from the formula from the arr[high] + k + 1 or low + k
+    //number + missing - k 
+}
+
+
+int main(){
+    vector <int> arr = {3, 5, 7, 10};
+    int k = 6;
+    cout<<Missing(arr,k);
+    return 0;
+}
