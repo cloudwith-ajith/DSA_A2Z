@@ -82,4 +82,7 @@ and the second one on the row first element and if the element is greater than t
 else move right
 
 
+// accumulate(begin, end, 0)
+here the zero repersent by the where to start the addition 
+
 
