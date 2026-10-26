@@ -998,4 +998,40 @@ int main(){
     return 0;
 }
 
-//------------------------------------------------
+//------------------------------------------------capacity of the ship
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int capacity(vector <int> &arr, int days){
+    int n = arr.size();
+    int low = *max_element(arr.begin(),arr.end());
+    int high = accumulate(arr.begin(), arr.end(),0);
+
+    for(int i = low; i <= high; i++){
+        int sum = 0;
+        int day = 1;
+        for(int j = 0; j < n; j++){
+            if(sum + arr[j] > i){
+                sum = arr[j];
+                day++;
+            }else{
+                sum += arr[j];
+            }
+        }
+
+        if(day <= days){
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+int main(){
+    vector <int> arr ={1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int days = 5;
+    cout<<capacity(arr,days);
+    return 0;
+}
+// optimal way
