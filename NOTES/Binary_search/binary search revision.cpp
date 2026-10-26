@@ -942,3 +942,60 @@ int main(){
     cout<<bouque(arr,m,k);
     return 0;
 }
+
+// optimal code for the problem
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int helper_function(vector <int> &arr, int m, int k, int target){
+    int b = 0;
+    int f = 0;
+    int n = arr.size();
+    for(int i = 0; i < n; i++){
+        if(arr[i] <= target){
+            f++;
+
+            if(f == k){
+                b++;
+                f = 0;
+            }
+        }else{
+            f = 0;
+        }
+    }
+
+    return b;
+}
+
+
+
+int bouquets(vector <int> &arr, int m , int k){
+    int low = 0;
+    int high = *max_element(arr.begin(), arr.end());
+    int answer = -1;
+
+    while(low <= high){
+        int mid = low + (high - low) / 2;
+        int x = helper_function(arr,m,k,mid);
+        if(x >= m ){
+            answer = mid;
+            high = mid - 1;
+        }else{
+            low = mid + 1;
+        }
+    }
+
+    return answer;
+}
+
+int main(){
+    vector <int> arr = {7,7,7,7,13,11,12,7};
+    int m = 2;
+    int k = 3;
+    cout<<bouquets(arr,m,k);
+    return 0;
+}
+
+//------------------------------------------------
