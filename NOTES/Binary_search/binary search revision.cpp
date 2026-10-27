@@ -1122,3 +1122,7 @@ int main(){
     cout<<Missing(arr,k);
     return 0;
 }
+
+
+// page allocaion
+//This is the optimal contiguous division.
