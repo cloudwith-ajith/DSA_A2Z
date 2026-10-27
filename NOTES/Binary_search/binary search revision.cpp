@@ -1126,3 +1126,57 @@ int main(){
 
 // page allocaion
 //This is the optimal contiguous division.
+
+
+
+// The aggressive cows
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int helper_function(vector <int> &arr, int target, int k){
+    int n = arr.size();
+    int cow = 1;
+    int last_placed = arr[0];
+    for(int i = 1; i < n; i++){
+        if(arr[i] - last_placed >= target){
+            cow++;
+            last_placed = arr[i];
+        }
+        if(cow >= k){
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
+int Aggressive_cows(vector <int> &arr, int k ){
+    int low = 1;
+    int maxi = *max_element(arr.begin(),arr.end());
+    int mini = *min_element(arr.begin(),arr.end());
+    int high = maxi - mini;
+    int ans = -1;
+    sort(arr.begin(),arr.end());
+    while(low <= high){
+        int mid = low + (high - low) / 2;
+        if(helper_function(arr,mid,k)){
+            ans = mid;
+            low = mid + 1;
+        }else{
+            high = mid - 1;
+        }
+    }
+
+    return ans;
+}
+
+
+int main(){
+    vector <int>  arr = {10, 1, 2, 7, 5};
+    int k = 3;
+    cout<<Aggressive_cows(arr, k);
+    return 0;
+}
