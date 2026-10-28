@@ -1276,6 +1276,53 @@ int main(){
 
 ///Kth Element of Two Sorted Arrays
 
+#include<bits/stdc++.h>
+using namespace std;
 
+double Kth_element(vector <int> &arr1, vector <int> &arr2, int k ){
+    int n = arr1.size();
+    int m = arr2.size();
+
+    if( n > m){
+        return Kth_element(arr2,arr1,k);
+    }
+
+    int low = max(0, k - m);
+    int high = min(k,n);
+
+    while(low <= high){
+        int cut_1 = (low + high) / 2;
+        int cut_2 = k - cut_1;
+        int left_1 = (cut_1 == 0) ? INT_MIN : arr1[cut_1 -1];
+        int right_1 = (cut_1 == n) ? INT_MAX : arr1[cut_1];
+        int left_2 = (cut_2 == 0) ? INT_MIN : arr2[cut_2 - 1];
+        int right_2 = (cut_2 == m) ? INT_MAX : arr2[cut_2];
+
+
+        if(left_1 <= right_2 && left_2 <= right_1){
+            return ((double) max(left_1,left_2));
+        }else if(left_1 > right_2){
+            high = cut_1 - 1;
+        }else{
+            low = cut_1 + 1;
+        }
+    }
+
+    return 1.00;
+}
+
+
+int main(){
+    vector <int> arr1 = {1,3};
+    vector <int> arr2 = {2,4,5};
+    int k = 5;
+    cout<<Kth_element(arr1,arr2,k);
+    return 0;
+}
+
+
+/// The most hard problem in the binary search, rare to aske, but learn it 
+// here the three approach is differnt 
+// brute force is differ and the optimal and the better appraoch 
 
 
