@@ -1325,4 +1325,40 @@ int main(){
 // here the three approach is differnt 
 // brute force is differ and the optimal and the better appraoch 
 
+//----------------------------------------------------------------better solution-----------------------
 
+#include<bits/stdc++.h>
+using namespace std;
+
+double GasStation(vector <int> &arr, int k){
+    int n = arr.size();
+    priority_queue <pair<double, int>> pq;
+    vector <int> howmany(n-1, 0);
+    for(int i = 0 ; i < n - 1; i++){
+        pq.push({arr[i + 1] - arr[i],i});
+    }
+
+    for(int i = 1; i <= k; i++){
+        auto top = pq.top();
+        pq.pop();
+        int sec_index = top.second;
+        howmany[sec_index]++;
+
+        double original = arr[sec_index + 1] - arr[sec_index];
+        double newdiff = original / (howmany[sec_index] + 1);
+
+        pq.push({newdiff,sec_index});
+    }
+
+    return pq.top().first;
+}
+
+
+int main(){
+    vector <int> arr = {1, 2, 3, 4, 5};
+    int k = 4;
+    cout<<GasStation(arr, k);
+    return 0;
+}
+
+// here the time compleity of the code is O(n + logn  )
