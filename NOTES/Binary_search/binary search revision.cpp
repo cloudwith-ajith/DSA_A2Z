@@ -1361,4 +1361,68 @@ int main(){
     return 0;
 }
 
-// here the time compleity of the code is O(n + logn  )
+// here the time compleity of the code is O(n log n + k log n )
+
+// optimal way of the problem 
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+// 1. Changed 'int dis' to 'long double dis'
+int helper_function(vector <int> &arr, long double dis){
+    int n = arr.size();
+    int total_required = 0;
+
+    for(int i = 0 ; i < n - 1; i++){
+        // Calculate sections needed. Using a small epsilon (1e-9) to handle 
+        // floating point precision when perfectly divisible.
+        int sections_needed = (arr[i + 1] - arr[i]) / dis;
+        
+        // If it's a perfect division, we need sections - 1 stations.
+        if ((arr[i + 1] - arr[i]) == sections_needed * dis) {
+            sections_needed--;
+        }
+        
+        total_required += sections_needed; // 2. Accumulate the count
+    }
+
+    return total_required;
+}
+
+long double GasStation(vector <int> &arr, int k){
+    int n = arr.size();
+    long double low = 0;
+    long double high = 0;
+
+    for(int i = 0; i < n - 1; i++){
+        high = max(high, (long double)arr[i + 1] - arr[i]);
+    }
+
+    // Binary search loop
+    while(high - low > 1e-6){
+        long double mid = low + (high - low) / 2.00;
+        if(helper_function(arr, mid) > k){
+            low = mid; // We need a larger max distance
+        } else {
+            high = mid; // This distance is possible, try to minimize it
+        }
+    }
+
+    return high;
+}
+
+int main(){
+    vector <int> arr = {1, 2, 3, 4, 5};
+    int k = 4;
+    
+    // Set precision to see the floating point result clearly
+    cout << fixed << setprecision(6) << GasStation(arr, k) << endl;
+    return 0;
+}
+
+
+//--------------------------------end, have a great section ahead---------
+
+
+
