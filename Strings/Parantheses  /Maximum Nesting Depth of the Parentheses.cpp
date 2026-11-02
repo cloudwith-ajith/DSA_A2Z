@@ -26,4 +26,5 @@ int main(){
     return 0;
 }
 
-// th
+// The Time complexity of the code is O(N)
+// The Space complexity of the code is O(1)
