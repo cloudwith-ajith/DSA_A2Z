@@ -48,3 +48,6 @@ int main(){
     
     return 0;
 }
+
+// The time complexity of the code is O(N 2)
+// The space complexity of the code is O(1)
