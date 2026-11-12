@@ -5,7 +5,7 @@ using namespace std;
 int upper_bound(vector <int> &arr, int target){
     int n = arr.size();
     for(int i = 0 ; i < n; i ++){
-        if(arr[i] == target || arr[i] > target){
+        if(arr[i] == target || arr[i] > target){  
             return i;
         }
     }
