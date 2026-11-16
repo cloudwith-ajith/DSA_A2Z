@@ -17,3 +17,6 @@ int main() {
     cout << power_function(num, mul); // Outputs: 1024
     return 0;
 }
+
+// The time complexity of the code is O(log n)
+// The space complexity of the code is O(1)
