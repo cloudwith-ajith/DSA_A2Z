@@ -42,3 +42,7 @@ int main() {
     }
     return 0;
 }
+
+
+// The Time complexity of the code is O(4n/root n)
+// The space complexity of code is O(4n/root n)
