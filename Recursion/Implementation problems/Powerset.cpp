@@ -54,3 +54,6 @@ int main() {
 
     return 0;
 }
+
+/// The Time complexity of the code is O(n.2n)
+// The space complexity of the code is O(n)
