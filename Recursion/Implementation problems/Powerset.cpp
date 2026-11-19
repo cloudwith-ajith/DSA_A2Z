@@ -57,3 +57,66 @@ int main() {
 
 /// The Time complexity of the code is O(n.2n)
 // The space complexity of the code is O(n)
+
+
+//---------------------------------------------rescursion 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// Recursive helper function to generate all subsets (Power Set)
+// Note: 'ans' and 'temp' are passed by reference (&) so all recursive calls modify the same vectors
+void solve(int index, vector<int> &arr, vector<vector<int>> &ans, vector<int> &temp) {
+    
+    // BASE CASE: 
+    // If we have considered all elements in the array, store the current subset and return
+    if (index == arr.size()) {
+        ans.push_back(temp);
+        return;
+    }
+
+    // CHOICE 1: INCLUDE the current element (arr[index])
+    temp.push_back(arr[index]);          // Add element to the current subset
+    solve(index + 1, arr, ans, temp);    // Move to the next index
+
+    // BACKTRACK: 
+    // Remove the element we just added so we can explore the path without it
+    temp.pop_back();
+
+    // CHOICE 2: EXCLUDE the current element (arr[index])
+    solve(index + 1, arr, ans, temp);    // Move to the next index without adding arr[index]
+}
+
+// Main function to initialize variables and trigger the recursion
+vector<vector<int>> powerset(vector<int> &arr) {
+    vector<vector<int>> ans;  // Stores all 2^n subsets
+    vector<int> temp;         // Temporarily holds one subset at a time during recursion
+
+    // Start recursion from index 0
+    solve(0, arr, ans, temp);
+
+    return ans;
+}
+
+int main() {
+    // Input array
+    vector<int> arr = {1, 2, 3};
+    
+    // Generate the power set
+    vector<vector<int>> x = powerset(arr);
+
+    // Print each subset in the format [123]
+    for (auto subset : x) {
+        cout << "[";
+        for (auto element : subset) {
+            cout << element;
+        }
+        cout << "]" << endl;
+    }
+
+    return 0;
+}
+
+
+// The time complexity of the code is O(n. 2 ^ n)
+// the space complexity of the code is O(n)
