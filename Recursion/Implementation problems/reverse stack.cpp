@@ -59,3 +59,6 @@ int main() {
 
     return 0;
 }
+
+// the time complexity of the code is O(n^2)
+// the space complexity of the code is O(1)
