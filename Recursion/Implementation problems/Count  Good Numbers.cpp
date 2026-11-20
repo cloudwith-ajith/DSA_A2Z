@@ -53,3 +53,7 @@ int main() {
 }
 
 
+// the time complexity of the code is O(log n)
+// the space complexity of the code is O(log n)
+
+
