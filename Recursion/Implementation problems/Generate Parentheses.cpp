@@ -17,7 +17,7 @@ void backtrack(vector<string> &answer, string &current, int opencout, int closed
     }
 
     // Choice 2: Add a closing bracket ')' only if it matches an unclosed '('
-    if (closedcout < opencout) {
+    if (closedcout < opencout) {     
         current.push_back(')');                                      // Choose
         backtrack(answer, current, opencout, closedcout + 1, max);   // Explore
         current.pop_back();                                          // Unchoose (backtrack)
