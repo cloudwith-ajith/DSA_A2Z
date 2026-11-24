@@ -5,7 +5,7 @@ using namespace std;
 void backtrack(vector<string> &answer, string &current, int opencout, int closedcout, int max) {
     // Base case: if the string reaches the target length (2 * n), save it
     if (current.length() == max * 2) {
-        answer.push_back(current);
+        answer.push_back(current);  
         return;
     }
 
