@@ -8,7 +8,7 @@ void backtrack(vector<string> &answer, string &current, int opencout, int closed
         answer.push_back(current);  
         return;
     }
-
+  
     // Choice 1: Add an opening bracket '(' if we haven't used all 'n' of them
     if (opencout < max) {
         current.push_back('(');                                      // Choose
