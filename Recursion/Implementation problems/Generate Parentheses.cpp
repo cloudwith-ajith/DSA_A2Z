@@ -13,7 +13,7 @@ void backtrack(vector<string> &answer, string &current, int opencout, int closed
     if (opencout < max) {
         current.push_back('(');                                      // Choose
         backtrack(answer, current, opencout + 1, closedcout, max);   // Explore
-        current.pop_back();                                          // Unchoose (backtrack)
+        current.pop_back();                                            // Unchoose (backtrack)
     }
 
     // Choice 2: Add a closing bracket ')' only if it matches an unclosed '('
