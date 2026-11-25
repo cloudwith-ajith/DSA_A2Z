@@ -1,0 +1,82 @@
+// Includes all standard C++ libraries (vector, iostream, etc.)
+#include <bits/stdc++.h>
+using namespace std;
+
+/**
+ * Helper recursive function to find all subsequences whose elements sum up to 'k'.
+ * 
+ * @param index : Current position we are checking in the input array 'arr'
+ * @param k     : The target sum we want to reach
+ * @param ans   : 2D vector storing all valid subsequences found so far (passed by reference)
+ * @param temp  : Current subsequence being built along this recursive path (passed by reference)
+ * @param sum   : Running sum of the elements currently inside 'temp'
+ * @param arr   : The original input array (passed by const reference to avoid copying)
+ */
+void recu(int index, int k, vector<vector<int>>& ans, vector<int>& temp, int sum, const vector<int>& arr) {
+    
+    // BASE CASE: We have made a decision (pick or not-pick) for every element in the array
+    if (index == arr.size()) {
+        // Check if the current subsequence's sum equals the target sum 'k'
+        if (sum == k) {
+            // Save a copy of the valid subsequence into our final answer list
+            ans.push_back(temp);
+        }
+        // Stop going deeper along this path and return to the previous function call
+        return;
+    }
+
+    // ---------------------------------------------------------
+    // CHOICE 1: PICK (Include) the current element arr[index]
+    // ---------------------------------------------------------
+    temp.push_back(arr[index]); // Add current element to our temporary subsequence
+    
+    // Move to the next index (index + 1) and add arr[index] to the running sum
+    recu(index + 1, k, ans, temp, sum + arr[index], arr);
+
+    // ---------------------------------------------------------
+    // BACKTRACK: Undo the previous choice
+    // ---------------------------------------------------------
+    // Remove the element we just added so 'temp' goes back to its previous state
+    // before we explore the "NOT PICK" choice below
+    temp.pop_back();
+
+    // ---------------------------------------------------------
+    // CHOICE 2: NOT PICK (Exclude) the current element arr[index]
+    // ---------------------------------------------------------
+    // Move to the next index (index + 1) while keeping 'temp' and 'sum' unchanged
+    recu(index + 1, k, ans, temp, sum, arr);
+}
+
+/**
+ * Wrapper function that initializes helper variables and starts the recursion.
+ */
+vector<vector<int>> subsumk(vector<int>& arr, int k) {
+    vector<vector<int>> ans; // Stores all matching subsequences
+    vector<int> temp;        // Starts empty; holds elements during recursion
+    
+    // Start recursion from index 0 with an initial sum of 0
+    recu(0, k, ans, temp, 0, arr);
+    
+    return ans;
+}
+
+int main() {
+    // Input array and target sum
+    vector<int> arr = {1, 2, 1};
+    int k = 2;
+
+    // Get all subsequences that sum to 'k'
+    // Note: For {1, 2, 1} and k = 2, valid subsequences are [1, 1] and [2]
+    vector<vector<int>> x = subsumk(arr, k);
+
+    // Loop through each valid subsequence in 'x' and print it
+    for (const auto& i : x) {
+        cout << "[ ";
+        for (int j : i) {
+            cout << j << " ";
+        }
+        cout << "]\n";
+    }
+
+    return 0; // End of program
+}
