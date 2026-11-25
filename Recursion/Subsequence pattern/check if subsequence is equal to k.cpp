@@ -80,3 +80,90 @@ int main() {
 
     return 0; // End of program
 }
+
+
+///// Includes all standard C++ libraries (vector, iostream, etc.)
+#include <bits/stdc++.h>
+using namespace std;
+
+/**
+ * Recursive function to find ONLY THE FIRST subsequence that sums to 'k'.
+ * 
+ * @return true  : A valid subsequence was found (signals all parent calls to stop early)
+ * @return false : No valid subsequence was found along this path
+ */
+bool recu(int index, int k, vector<vector<int>>& ans, vector<int>& temp, int sum, const vector<int>& arr) {
+    
+    // BASE CASE: Reached the end of the array
+    if (index == arr.size()) {
+        // Check if our current subsequence equals the target sum 'k'
+        if (sum == k) {
+            ans.push_back(temp); // Save the first valid subsequence found
+            return true;         // Signal "SUCCESS" up the call stack to stop further searching
+        }
+        return false;            // Signal "NOT FOUND" on this path
+    }
+
+    // ---------------------------------------------------------
+    // CHOICE 1: PICK (Include) the current element arr[index]
+    // ---------------------------------------------------------
+    temp.push_back(arr[index]); // Add current element to the temporary subsequence
+    
+    // Explore deeper with the picked element.
+    // If this branch returns 'true', immediately return 'true' without checking other branches.
+    if (recu(index + 1, k, ans, temp, sum + arr[index], arr) == true) {
+        return true;   
+    }
+
+    // ---------------------------------------------------------
+    // BACKTRACK: Undo the previous choice
+    // ---------------------------------------------------------
+    // Execution only reaches here if Choice 1 returned 'false'.
+    // Remove arr[index] from 'temp' before trying the "not-pick" choice.
+    temp.pop_back();
+
+    // ---------------------------------------------------------
+    // CHOICE 2: NOT PICK (Exclude) the current element arr[index]
+    // ---------------------------------------------------------
+    // Explore deeper without the current element.
+    // If this branch finds a valid subsequence, immediately propagate 'true' upward.
+    if (recu(index + 1, k, ans, temp, sum, arr) == true) {
+        return true;
+    }
+
+    // Neither picking nor not-picking led to a valid sum 'k' from this state
+    return false;
+}
+
+/**
+ * Wrapper function to set up variables and trigger the search.
+ */
+vector<vector<int>> subsumk(vector<int>& arr, int k) {
+    vector<vector<int>> ans; // Will hold at most 1 subsequence because we stop early
+    vector<int> temp;        // Tracks the current subsequence during recursion
+    
+    // Start recursion at index 0 with initial sum 0
+    recu(0, k, ans, temp, 0, arr);
+    
+    return ans;
+}
+
+int main() {
+    // Input array and target sum
+    vector<int> arr = {1, 2, 1};
+    int k = 2;
+
+    // Find the first subsequence summing to 'k'
+    vector<vector<int>> x = subsumk(arr, k);
+
+    // Print the result (will only print [ 1 1 ], stopping before it ever checks [ 2 ])
+    for (const auto& i : x) {
+        cout << "[ ";
+        for (int j : i) {
+            cout << j << " ";
+        }
+        cout << "]\n";
+    }
+
+    return 0; // End of program
+}
