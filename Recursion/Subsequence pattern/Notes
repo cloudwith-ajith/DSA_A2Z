@@ -1,0 +1,23 @@
+
+Comparison of the 3 Recursion Patterns
+
+
+Pattern Name	Return Type	Base Case Behavior	Recursive Step	When to Use
+1. Print / Store All	void	If valid, save temp to ans and return.	Call Pick \(\rightarrow \) Backtrack \(\rightarrow \) Call Not-Pick.	When you need every single valid subsequence or combination.
+2. Find Any One	bool	If valid, save temp and return true; else return false.	if (pick() == true) return true; 
+ if (notPick() == true) return true; 
+ return false;	When you only need one valid answer and want to stop early to save time.
+3. Count Total	int	If valid, return 1; else return 0.	int l = pick(); 
+ int r = notPick(); 
+ return l + r;	When you only need the total count of valid ways (and don't need to store the elements).
+
+
+
+
+
+
+Core Takeaways for Interviews
+
+• Pattern 1 (void) explores the entire recursion tree (\(O(2^n)\) every time) and requires a temp vector with backtracking (pop_back()).
+• Pattern 2 (bool) uses short-circuiting (if (call() == true) return true;) so the moment a leaf node hits true, the entire call stack unwinds without checking remaining branches.
+• Pattern 3 (int) eliminates the temp vector completely because you only pass numbers (1 or 0) back up the tree and add them (l + r). This exact structure is also the foundation for Dynamic Programming (Memoization).
